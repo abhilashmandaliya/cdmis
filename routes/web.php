@@ -16,3 +16,7 @@ Route::get('/', 'UserHomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'guest'], function () {
+	Route::resource('country', 'CountryController');
+});
