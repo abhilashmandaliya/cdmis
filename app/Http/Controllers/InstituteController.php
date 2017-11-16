@@ -82,4 +82,5 @@ class InstituteController extends Controller
     {
         //
     }
+
 }
