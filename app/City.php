@@ -1,10 +1,49 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ * Date: Thu, 16 Nov 2017 13:20:33 +0000.
+ */
+
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Reliese\Database\Eloquent\Model as Eloquent;
 
-class City extends Model
+/**
+ * Class City
+ * 
+ * @property int $id
+ * @property string $cityName
+ * @property int $stateId
+ * @property bool $isVisible
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \App\State $state
+ * @property \Illuminate\Database\Eloquent\Collection $consultancy_branches
+ *
+ * @package App
+ */
+class City extends Eloquent
 {
-    //
+	protected $casts = [
+		'stateId' => 'int',
+		'isVisible' => 'bool'
+	];
+
+	protected $fillable = [
+		'cityName',
+		'stateId',
+		'isVisible'
+	];
+
+	public function state()
+	{
+		return $this->belongsTo(\App\State::class, 'stateId');
+	}
+
+	public function consultancy_branches()
+	{
+		return $this->hasMany(\App\ConsultancyBranch::class, 'branchCity');
+	}
 }

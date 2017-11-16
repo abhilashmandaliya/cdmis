@@ -10,24 +10,25 @@ namespace App;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class BoardList
+ * Class PasswordReset
  * 
- * @property int $id
- * @property string $boardName
- * @property bool $isVisible
+ * @property string $email
+ * @property string $token
  * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
  *
  * @package App
  */
-class BoardList extends Eloquent
+class PasswordReset extends Eloquent
 {
-	protected $casts = [
-		'isVisible' => 'bool'
+	public $incrementing = false;
+	public $timestamps = false;
+
+	protected $hidden = [
+		'token'
 	];
 
 	protected $fillable = [
-		'boardName',
-		'isVisible'
+		'email',
+		'token'
 	];
 }

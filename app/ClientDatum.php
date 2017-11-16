@@ -10,28 +10,33 @@ namespace App;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class InstituteSuggestion
+ * Class ClientDatum
  * 
  * @property int $id
- * @property int $clientId
- * @property bool $isSelectionDone
+ * @property string $clientName
+ * @property string $clientEmail
+ * @property string $clientNumber
+ * @property string $clientPassword
+ * @property bool $emailSentFlag
  * @property bool $isVisible
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
  * @package App
  */
-class InstituteSuggestion extends Eloquent
+class ClientDatum extends Eloquent
 {
 	protected $casts = [
-		'clientId' => 'int',
-		'isSelectionDone' => 'bool',
+		'emailSentFlag' => 'bool',
 		'isVisible' => 'bool'
 	];
 
 	protected $fillable = [
-		'clientId',
-		'isSelectionDone',
+		'clientName',
+		'clientEmail',
+		'clientNumber',
+		'clientPassword',
+		'emailSentFlag',
 		'isVisible'
 	];
 }
