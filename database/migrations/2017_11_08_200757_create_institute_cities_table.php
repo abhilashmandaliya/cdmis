@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConsultancyBranchesTable extends Migration
+class CreateInstituteCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateConsultancyBranchesTable extends Migration
      */
     public function up()
     {
-        Schema::create('consultancy_branches', function (Blueprint $table) {
+        Schema::create('institute_cities', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('instituteId')->references('id')->on('institutes');
+            $table->integer('cityId')->references('id')->on('cities');
+            $table->string('websiteLink');
             $table->string('contactNumber');
-            $table->string('branchAddress');
-            $table->integer('branchCity')->unsigned();
-            $table->foreign('branchCity')->references('id')->on('cities');
             $table->boolean('isVisible');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateConsultancyBranchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consultancy_branches');
+        Schema::dropIfExists('institute_cities');
     }
 }
