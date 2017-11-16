@@ -1,29 +1,53 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ * Date: Thu, 16 Nov 2017 13:20:33 +0000.
+ */
+
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Reliese\Database\Eloquent\Model as Eloquent;
 
-class User extends Authenticatable
+/**
+ * Class User
+ * 
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property int $userTypeId
+ * @property int $branchId
+ * @property int $accountCreatorId
+ * @property bool $isVisible
+ *
+ * @package App
+ */
+class User extends Eloquent
 {
-    use Notifiable;
+	protected $casts = [
+		'userTypeId' => 'int',
+		'branchId' => 'int',
+		'accountCreatorId' => 'int',
+		'isVisible' => 'bool'
+	];
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	protected $fillable = [
+		'name',
+		'email',
+		'password',
+		'remember_token',
+		'userTypeId',
+		'branchId',
+		'accountCreatorId',
+		'isVisible'
+	];
 }

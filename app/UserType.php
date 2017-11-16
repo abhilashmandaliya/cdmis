@@ -1,10 +1,33 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ * Date: Thu, 16 Nov 2017 13:20:33 +0000.
+ */
+
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Reliese\Database\Eloquent\Model as Eloquent;
 
-class UserType extends Model
+/**
+ * Class UserType
+ * 
+ * @property int $id
+ * @property string $typeName
+ * @property bool $isVisible
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ *
+ * @package App
+ */
+class UserType extends Eloquent
 {
-    //
+	protected $casts = [
+		'isVisible' => 'bool'
+	];
+
+	protected $fillable = [
+		'typeName',
+		'isVisible'
+	];
 }
