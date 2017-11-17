@@ -36,7 +36,9 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = Country::create($data)->id;
+        return $this->index();
     }
 
     /**
@@ -70,7 +72,10 @@ class CountryController extends Controller
      */
     public function update(Request $request, Country $country)
     {
-        //
+        $country->countryName = $request['countryName'];
+        $country->isVisible = $request['isVisible'];
+        $country->save();
+        return $this->index();
     }
 
     /**
@@ -81,6 +86,7 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        //
+        $country->delete();
+        return $this->index();
     }
 }
