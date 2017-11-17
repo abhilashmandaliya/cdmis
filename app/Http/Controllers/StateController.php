@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\State;
+use App\Country;
 use Illuminate\Http\Request;
 
 class StateController extends Controller
@@ -14,7 +15,9 @@ class StateController extends Controller
      */
     public function index()
     {
-        //
+        $states = State::with('country')->paginate(5);
+        $countries = Country::all();
+        return view('admin.state.index', ['countries' => $countries, 'states' => $states]);
     }
 
     /**

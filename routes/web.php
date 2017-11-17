@@ -19,4 +19,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'guest'], function () {
 	Route::resource('country', 'CountryController');
+	Route::resource('state', 'StateController');
+	Route::resource('city', 'CityController');
 });
