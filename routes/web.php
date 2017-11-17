@@ -21,4 +21,5 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('country', 'CountryController');
 	Route::resource('state', 'StateController');
 	Route::resource('city', 'CityController');
+	Route::resource('user', 'UserController');
 });
