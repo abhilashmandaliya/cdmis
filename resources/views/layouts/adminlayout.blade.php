@@ -245,7 +245,7 @@
 							
 								<li> <a href="/programList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
 							
-								<li> <a href="viewCourseList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
+								<li> <a href="/courseList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
 							</ul>							
 						</li>  					
 					<!-- End Manage Education Basics -->
