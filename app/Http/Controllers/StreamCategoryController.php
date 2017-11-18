@@ -14,7 +14,8 @@ class StreamCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $streamCategories = StreamCategory::paginate(5);
+        return view('admin.streamcategory.index', ['streamCategories' => $streamCategories]);
     }
 
     /**
@@ -35,7 +36,9 @@ class StreamCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $streamCategory = $request->all();
+        $id = StreamCategory::create($streamCategory)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class StreamCategoryController extends Controller
      */
     public function update(Request $request, StreamCategory $streamCategory)
     {
-        //
+        $streamCategory['streamName'] = $request['streamName'];
+        $streamCategory['isVisible'] = $request['isVisible'];
+        $streamCategory->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class StreamCategoryController extends Controller
      */
     public function destroy(StreamCategory $streamCategory)
     {
-        //
+        $streamCategory->delete();
+        return $this->index();
     }
 }

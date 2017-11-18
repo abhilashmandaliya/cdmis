@@ -25,4 +25,5 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('userType', 'UserTypeController');
 	Route::resource('consultancyBranch', 'ConsultancyBranchController');
 	Route::resource('boardList', 'BoardListController');
+	Route::resource('streamCategory', 'StreamCategoryController');
 });
