@@ -235,7 +235,7 @@
 								<li> <a href="viewInstituteCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Institute Category</a></li>
 							</ul>
 							<ul class="nav nav-second-level"> 
-								<li> <a href="viewBoardList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
+								<li> <a href="/boardList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
 							</ul>
 							
 							<ul class="nav nav-second-level"> 
