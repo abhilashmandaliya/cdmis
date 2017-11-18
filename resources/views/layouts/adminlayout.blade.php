@@ -138,13 +138,14 @@
                                     <div class="u-img"><img src="../plugins/images/users/varun.jpg" alt="user" /></div>
                                     <div class="u-text">
                                         <h4>Steave Jobs</h4>
-                                        <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                        <p class="text-muted">varun@gmail.com</p>
+                                    </div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
                              <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="#"><i class="ti-settings"></i>Change Password</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="login2.html"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
@@ -184,121 +185,141 @@
                     </div>
                 </div>
                 <ul class="nav" id="side-menu">
-                
-                    <!-- Dashboard -->
-                        <li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
-                    <!-- End Dashboard -->
-                    
-                    <!-- Manage Location -->                                
-                        <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-map-marker-multiple fa-fw"></i> <span class="hide-menu">Manage Location<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="viewCountry.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Country</a></li>                        
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">State</span></a></li>
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">City</span></a></li>
-                            </ul>                           
-                        </li>   
-                    <!-- End Manage Location -->
-                    
-                    <!-- Manage Extra Activities -->
-                                        
-                    <!-- End Manage Activities -->
-                    
-                    <!-- Manage Branch -->
-                    
-                    <!-- End Manage Branch -->
-                    
-                    <!-- Manage User Type -->
-                    
-                    <!-- End Manage User Type -->
-                    
-                    <!-- Manage Education Basics -->
-                    
-                    <!-- End Manage Education Basics -->
-                
-                    <!-- Manage User -->                
-                        <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-checkbox-multiple-marked-outline fa-fw"></i> <span class="hide-menu">Manage Users<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Insert User</span><span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li> <a href="addUser.html"><i class=" fa-fw">A</i><span class="hide-menu">Admin/Consultant</span></a> </li>
-                                    </ul>
+				
+					<!-- Dashboard -->
+						<li> <a href="index.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
+					<!-- End Dashboard -->
+					
+					<!-- Manage Location -->					
+						<li>
+                            <a href="javascript:void(0)" class="waves-effect">
+                                <i class="mdi mdi-map-marker-multiple fa-fw"></i>
+                                <span class="hide-menu">Manage Location
+                                    <span class="fa arrow"></span>
+                                </span>
+                            </a>
+							<ul class="nav nav-second-level"> 
+								<li>
+                                    <a href="country" class="waves-effect">
+                                        <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+                                        <span class="hide-menu">Country</span>
+                                    </a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">View User</span><span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">A</i><span class="hide-menu">Admin</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">C</i><span class="hide-menu">Consultant</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">C</i><span class="hide-menu">Client</span></a> </li>
-                                    </ul>
+								<li>
+                                    <a href="state" class="waves-effect">
+                                        <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+                                        <span class="hide-menu">State</span>
+                                    </a>
                                 </li>
-                            </ul>
-                        </li>                   
-                    <!-- End Manage User -->
-                    
-                    <!-- Manage Institute -->
-                        <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-checkbox-multiple-marked-outline fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">School</span><span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
-                                    </ul>
+								<li>
+                                    <a href="city" class="waves-effect">
+                                        <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+                                        <span class="hide-menu">City</span>
+                                    </a>
                                 </li>
-                            </ul>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">College</span><span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <ul class="nav nav-second-level"> 
-                                <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Private Institute</span><span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
-                                        <li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
-                                    </ul>
-                                </li>
-                            </ul>
+							</ul>							
+						</li>  	
+					<!-- End Manage Location -->
 
-                        </li>                   
-                    <!-- End Manage Institute -->
-                    
-                    <!-- Manage Feedback -->
-                        <li> <a href="feedback.html" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> View Feedback </span></a></li>
-                    <!-- End Manage Feedback -->
+					<!-- Manage User Type -->
+						<li> <a href="/userType" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw" data-icon="v"></i> <span class="hide-menu">Manage UserType</span></a></li>					
+					<!-- End Manage User Type -->
 
-                    <!-- Manage Location -->
+					<!-- Manage Branch -->
+						<li> <a href="viewConsultancyBranch.html" class="waves-effect"><i class="mdi mdi-source-branch fa-fw" data-icon="v"></i> <span class="hide-menu">Manage Branches</span></a></li>						
+					<!-- End Manage Branch -->					
 
-                    <!-- End Manage Location -->
-                    
-                    <!-- Manage Facilities-->
-                        <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-checkbox-multiple-marked-outline fa-fw"></i> <span class="hide-menu">Manage Facilities<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="javascript:void(0)"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">View</span></a> </li>
-                                <li> <a href="javascript:void(0)"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Add</span></a> </li>    
-                                <li> <a href="javascript:void(0)"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Update</span></a> </li> 
-                            </ul>
-                        </li>   
-                    <!-- End Manage Facilities-->
-                    
-                    <!-- Manage Activities -->
-                        <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-checkbox-multiple-marked-outline fa-fw"></i> <span class="hide-menu">Manage Activities<span class="fa arrow"></span></span></a>
-                            <ul class="nav nav-second-level">
-                                <li> <a href="javascript:void(0)"><i data-icon="/" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">View</span></a> </li>
-                                <li> <a href="javascript:void(0)"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Add</span></a> </li>    
-                                <li> <a href="javascript:void(0)"><i data-icon="7" class="linea-icon linea-basic fa-fw"></i><span class="hide-menu">Update</span></a> </li> 
-                            </ul>
-                        </li>   
-                    <!--End Manage Activities  -->                   
+					<!-- Manage Education Basics -->
+						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-school fa-fw"></i> <span class="hide-menu">Manage Basics<span class="fa arrow"></span></span></a>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewInstituteCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Institute Category</a></li>
+							</ul>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewBoardList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
+							</ul>
+							
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewStreamCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Stream category</span></a></li>
+							</ul>			
+							
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewProgramCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
+							</ul>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewProgramList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
+							</ul>							
+							<ul class="nav nav-second-level"> 
+								<li> <a href="viewCourseList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
+							</ul>							
+						</li>  					
+					<!-- End Manage Education Basics -->
+					
+					<!-- Manage Extra Activities -->
+					    <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-plus-box fa-fw"></i> <span class="hide-menu">Manage Extra<span class="fa arrow"></span></span></a>
+							<ul class="nav nav-second-level">
+								<li> <a href="viewFacility.html"><i data-icon="/" class="mdi mdi-seat-recline-extra fa-fw"></i><span class="hide-menu">Facilities</span></a> </li>
+								<li> <a href="viewEvents.html"><i data-icon="/" class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">Events</span></a> </li>
+							</ul>
+						</li>											
+					<!-- End Manage Activities -->
+																
+					<!-- Manage User -->				
+						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Manage Users<span class="fa arrow"></span></span></a>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Insert User</span><span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li> <a href="addUser.html"><i class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Admin/Consultant</span></a> </li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account fa-fw"></i><span class="hide-menu">View User</span><span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li> <a href="viewAdmin.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Admin</span></a> </li>
+										<li> <a href="viewConsultant.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Consultant</span></a> </li>
+										<li> <a href="viewClient.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Client</span></a> </li>
+									</ul>
+								</li>
+							</ul>
+						</li>					
+					<!-- End Manage User -->
+					
+					<!-- Manage Institute -->
+						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">School</span><span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li> <a href="viewSchool.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw"></i><span class="hide-menu">Add</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw"></i><span class="hide-menu">Delete</span></a> </li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-school fa-fw"></i><span class="hide-menu">College</span><span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
+									</ul>
+								</li>
+							</ul>
+							<ul class="nav nav-second-level"> 
+								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-home fa-fw"></i><span class="hide-menu">Private Institute</span><span class="fa arrow"></span></a>
+									<ul class="nav nav-third-level">
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
+										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
+									</ul>
+								</li>
+							</ul>
+
+						</li>					
+					<!-- End Manage Institute -->					
                 </ul>
             </div>
         </div>
+
         <!-- ============================================================== -->
         <!-- End Left Sidebar -->
         <!-- ============================================================== -->
@@ -346,5 +367,34 @@
     <script src="/js/footable-init.js"></script>
     <!--Style Switcher -->
     <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
+    <!-- Change Password Modal -->
+				
+    <div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">Change Password</h4> </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="recipient-name" class="control-label">Old Password:</label>
+                                                    <input type="password" class="form-control" id="oldPassword"> </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" class="control-label">New Password</label>
+                                                    <input type="password" class="form-control" id="newPassword">
+                                                </div>
+												<div class="form-group">
+                                                    <label for="message-text" class="control-label">Confirm New Password</label>
+                                                    <input type="password" class="form-control" id="confirmNewPassword">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger waves-effect waves-light">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
 </body>
 </html>

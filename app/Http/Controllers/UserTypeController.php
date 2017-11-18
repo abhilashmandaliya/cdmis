@@ -14,7 +14,8 @@ class UserTypeController extends Controller
      */
     public function index()
     {
-        //
+        $userTypes = UserType::all();
+        return view('admin.usertypes.index', ['userTypes' => $userTypes]);
     }
 
     /**
@@ -35,7 +36,9 @@ class UserTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $userType = $request->all();
+        $id = UserType::create($userType)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class UserTypeController extends Controller
      */
     public function update(Request $request, UserType $userType)
     {
-        //
+        $userType->typeName = $request['typeName'];
+        $userType->isVisible = $request['isVisible'];
+        $userType->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class UserTypeController extends Controller
      */
     public function destroy(UserType $userType)
     {
-        //
+        $userType->delete();
+        return $this->index();
     }
 }
