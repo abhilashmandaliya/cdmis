@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Thu, 16 Nov 2017 13:20:33 +0000.
+ * Date: Fri, 17 Nov 2017 17:54:52 +0000.
  */
 
 namespace App;
@@ -17,6 +17,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property bool $isVisible
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $users
  *
  * @package App
  */
@@ -30,4 +32,9 @@ class UserType extends Eloquent
 		'typeName',
 		'isVisible'
 	];
+
+	public function users()
+	{
+		return $this->hasMany(\App\User::class, 'userTypeId');
+	}
 }

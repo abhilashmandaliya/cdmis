@@ -14,10 +14,13 @@ class UpdateUserTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('userTypeId')->references('id')->on('user_types');
-            $table->integer('branchId')->references('id')->on('consultancy_branches');
-            $table->integer('accountCreatorId')->references('id')->on('users');
+            $table->integer('userTypeId')->unsigned();
+            $table->integer('branchId')->unsigned();
+            $table->integer('accountCreatorId')->unsigned();
             $table->boolean('isVisible');
+            $table->foreign('userTypeId')->references('id')->on('user_types');
+            $table->foreign('branchId')->references('id')->on('consultancy_branches');
+            $table->foreign('accountCreatorId')->references('id')->on('users');            
         });
     }
 

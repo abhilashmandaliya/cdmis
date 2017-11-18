@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserType;
+use App\ConsultancyBranch;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -24,7 +26,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $userTypes = UserType::all();
+        $consultancyBranches = ConsultancyBranch::with('city')->get();
+        return view('admin.user.create', ['userTypes' => $userTypes, 'consultancyBranches' => $consultancyBranches]);
     }
 
     /**
@@ -35,7 +39,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = $request->all();
+        $user['password'] = bcrypt($user['password']);
+        $user['accountCreatorId'] = 1;
+        $user['isVisible'] = true;
+        $id = User::create($user)->id;
+        return $this->create();
     }
 
     /**
