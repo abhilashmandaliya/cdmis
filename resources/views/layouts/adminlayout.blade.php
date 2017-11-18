@@ -241,7 +241,7 @@
 							
 								<li> <a href="/streamCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Stream category</span></a></li>
 							
-								<li> <a href="viewProgramCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
+								<li> <a href="/programCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
 							
 								<li> <a href="viewProgramList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
 							

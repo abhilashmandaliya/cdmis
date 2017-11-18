@@ -14,7 +14,8 @@ class ProgramCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $programCategories = ProgramCategory::paginate(5);
+        return view('admin.programcategory.index', ['programCategories' => $programCategories]);
     }
 
     /**
@@ -35,7 +36,9 @@ class ProgramCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $programCategory = $request->all();
+        $id = ProgramCategory::create($programCategory)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class ProgramCategoryController extends Controller
      */
     public function update(Request $request, ProgramCategory $programCategory)
     {
-        //
+        $programCategory['programCategoryName'] = $request['programCategoryName'];
+        $programCategory['isVisible'] = $request['isVisible'];
+        $programCategory->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class ProgramCategoryController extends Controller
      */
     public function destroy(ProgramCategory $programCategory)
     {
-        //
+        $programCategory->delete();
+        return $this->index();
     }
 }
