@@ -27,4 +27,5 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('boardList', 'BoardListController');
 	Route::resource('streamCategory', 'StreamCategoryController');
 	Route::resource('programCategory', 'ProgramCategoryController');
+	Route::resource('programList', 'ProgramListController');
 });

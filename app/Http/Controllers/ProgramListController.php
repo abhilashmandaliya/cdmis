@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\ProgramList;
+use App\ProgramCategory;
+use App\StreamCategory;
 use Illuminate\Http\Request;
 
 class ProgramListController extends Controller
@@ -14,7 +16,10 @@ class ProgramListController extends Controller
      */
     public function index()
     {
-        //
+        $programLists = ProgramList::with('program_category')->with('stream_category')->paginate(5);
+        $programCategories = ProgramCategory::all();
+        $streamCategories = StreamCategory::all();
+        return view('admin.programlist.index', ['programLists' => $programLists, 'programCategories' => $programCategories, 'streamCategories' => $streamCategories]);
     }
 
     /**
@@ -35,7 +40,9 @@ class ProgramListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $programList = $request->all();
+        $id = ProgramList::create($programList)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +76,12 @@ class ProgramListController extends Controller
      */
     public function update(Request $request, ProgramList $programList)
     {
-        //
+        $programList['programName'] = $request['programName'];
+        $programList['programCategoryId'] = $request['programCategoryId'];
+        $programList['streamId'] = $request['streamId'];
+        $programList['isVisible'] = $request['isVisible'];
+        $programList->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +92,7 @@ class ProgramListController extends Controller
      */
     public function destroy(ProgramList $programList)
     {
-        //
+        $programList->delete();
+        return $this->index();
     }
 }
