@@ -14,7 +14,8 @@ class BoardListController extends Controller
      */
     public function index()
     {
-        //
+        $boardLists = BoardList::paginate(5);
+        return view('admin.boardlist.index', ['boardLists' => $boardLists]);
     }
 
     /**
@@ -35,7 +36,9 @@ class BoardListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $board = $request->all();
+        $id = BoardList::create($board)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class BoardListController extends Controller
      */
     public function update(Request $request, BoardList $boardList)
     {
-        //
+        $boardList['boardName'] = $request['boardName'];
+        $boardList['isVisible'] = $request['isVisible'];
+        $boardList->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class BoardListController extends Controller
      */
     public function destroy(BoardList $boardList)
     {
-        //
+        $boardList->delete();
+        return $this->index();
     }
 }

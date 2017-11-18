@@ -14,7 +14,8 @@ class CourseListController extends Controller
      */
     public function index()
     {
-        //
+        $courseLists = CourseList::paginate(5);
+        return view('admin.courselist.index', ['courseLists' => $courseLists]);
     }
 
     /**
@@ -35,7 +36,9 @@ class CourseListController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = $request->all();
+        $id = CourseList::create($course)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class CourseListController extends Controller
      */
     public function update(Request $request, CourseList $courseList)
     {
-        //
+        $courseList['isActive'] = $request['isActive'];
+        $courseList['courseName'] = $request['courseName'];
+        $courseList->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class CourseListController extends Controller
      */
     public function destroy(CourseList $courseList)
     {
-        //
+        $courseList->delete();
+        return $this->index();
     }
 }

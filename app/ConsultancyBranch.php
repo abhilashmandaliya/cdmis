@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Fri, 17 Nov 2017 17:54:52 +0000.
+ * Date: Sat, 18 Nov 2017 11:33:35 +0000.
  */
 
 namespace App;
@@ -13,6 +13,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class ConsultancyBranch
  * 
  * @property int $id
+ * @property string $branchName
  * @property string $contactNumber
  * @property string $branchAddress
  * @property int $branchCity
@@ -33,6 +34,7 @@ class ConsultancyBranch extends Eloquent
 	];
 
 	protected $fillable = [
+		'branchName',
 		'contactNumber',
 		'branchAddress',
 		'branchCity',
