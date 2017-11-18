@@ -15,7 +15,6 @@ Manage User Types
                     <div class="col-md-12">
                         <div class="white-box">
                             <h3 class="box-title">View User Type</h3>
-							<h4  style="float:right;"><button class="btn btn-block btn-danger btn-rounded" id="deleteButton" style="display:inline-block" disabled="true" onclick="deleteConfirmation()">Delete</button></h4>
                             <div class="scrollable">
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">

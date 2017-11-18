@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ConsultancyBranch;
+use App\City;
 use Illuminate\Http\Request;
 
 class ConsultancyBranchController extends Controller
@@ -14,7 +15,9 @@ class ConsultancyBranchController extends Controller
      */
     public function index()
     {
-        //
+        $consultancyBranches = ConsultancyBranch::with('city')->paginate(5);
+        $cities = City::all();
+        return view('admin.consultancybranches.index', ['consultancyBranches' => $consultancyBranches, 'cities' => $cities]);
     }
 
     /**
@@ -35,7 +38,9 @@ class ConsultancyBranchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $consultancyBranch = $request->all();
+        $id = ConsultancyBranch::create($consultancyBranch)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +74,13 @@ class ConsultancyBranchController extends Controller
      */
     public function update(Request $request, ConsultancyBranch $consultancyBranch)
     {
-        //
+        $consultancyBranch['branchName'] = $request['branchName'];
+        $consultancyBranch['branchAddress'] = $request['branchAddress'];
+        $consultancyBranch['contactNumber'] = $request['contactNumber'];
+        $consultancyBranch['branchCity'] = $request['branchCity'];
+        $consultancyBranch['isVisible'] = $request['isVisible'];
+        $consultancyBranch->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +91,7 @@ class ConsultancyBranchController extends Controller
      */
     public function destroy(ConsultancyBranch $consultancyBranch)
     {
-        //
+        $consultancyBranch->delete();
+        return $this->index();
     }
 }
