@@ -226,7 +226,7 @@
 					<!-- End Manage User Type -->
 
 					<!-- Manage Branch -->
-						<li> <a href="viewConsultancyBranch.html" class="waves-effect"><i class="mdi mdi-source-branch fa-fw" data-icon="v"></i> <span class="hide-menu">Manage Branches</span></a></li>						
+						<li> <a href="/consultancyBranch" class="waves-effect"><i class="mdi mdi-source-branch fa-fw" data-icon="v"></i> <span class="hide-menu">Manage Branches</span></a></li>						
 					<!-- End Manage Branch -->					
 
 					<!-- Manage Education Basics -->
