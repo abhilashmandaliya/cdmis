@@ -14,7 +14,7 @@ class UserTypeController extends Controller
      */
     public function index()
     {
-        $userTypes = UserType::all();
+        $userTypes = UserType::paginate(5);
         return view('admin.usertypes.index', ['userTypes' => $userTypes]);
     }
 

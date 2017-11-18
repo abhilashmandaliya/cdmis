@@ -131,7 +131,7 @@ Manage User Types
                                                 </div>
                                                 <td colspan="7">
                                                     <div class="text-right">
-                                                        <ul class="pagination"> </ul>
+                                                        {{ $userTypes->links() }}
                                                     </div>
                                                 </td>
                                             </tr>
