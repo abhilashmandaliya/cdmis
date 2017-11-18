@@ -15,7 +15,7 @@ Manage Location - State
                     <div class="col-md-12">
                         <div class="white-box">
                             <h3 class="box-title">View State</h3>
-							<h4  style="float:right;"><button class="btn btn-block btn-danger btn-rounded" id="deleteButton" style="display:inline-block" disabled="true" onclick="deleteConfirmation()">Delete</button></h4>
+							
                             <div class="scrollable">
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
@@ -38,32 +38,45 @@ Manage Location - State
                                                         <td id="countryName" value="">{{ $state->country->countryName }}</td>
                                                         <td id="isActive" value="">{{ $state->isVisible }}</td>
                                                         <td>
-                                                            <button class="btn btn-block btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#updateState">
+                                                            <button class="btn btn-block btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#updateState{{ $state->id }}">
                                                                 <i class="fa fa-edit fa-fw"></i> Update
                                                             </button>	
                                                         </td>
-                                                        <td style="text-align:center;"><input type="checkbox" id="deleteCheck" value="" onchange="deleteCheckFunction(this)"></td>
+                                                        
+                                                         <td style="text-align:center;">
+                                                        <button class="btn btn-block btn-sm btn-danger btn-rounded" onclick="event.preventDefault();
+                                                     document.getElementById('delete-form-{{ $state->id }}').submit();">
+                                                                <i class="fa fa-remove fa-fw"></i> Delete
+                                                        </button>
+                                                        <form id="delete-form-{{ $state->id }}" action="state/{{ $state->id }}" method="POST" style="display: none;">
+                                                            <input type="hidden" name="_method" value="DELETE" />
+                                                            {{ csrf_field() }}
+                                                        </form>
+                                                        </td>    
+
                                                     </tr>
-                                                @endforeach
-                                            @endisset
-											<div id="updateState" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                             
+											<div id="updateState{{ $state->id }}" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="mdi mdi-close"></i></button>
                                                                 <h4 class="modal-title" id="myModalLabel">Update State</h4> </div>
-                                                            <div class="modal-body">
-                                                                <from class="form-horizontal form-material">
+                                                                <form class="form-horizontal form-material" action="state/{{ $state->id }}" method="POST">
+                                                                    {{ csrf_field() }}
+                                                                    <input type="hidden" name="_method" value="PUT" />
+                                                                <div class="modal-body">
+                                                                
                                                                     <div class="form-group">
 																		<div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" id="stateId" disabled="true" placeholder="stateId: 1"> 
+                                                                            <input type="text" class="form-control" id="stateId" disabled="true" value="{{ $state->id }}"> 
 																		</div>
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" id="stateName" placeholder="Gujarat"> 
+                                                                            <input type="text" class="form-control" name="stateName" value="{{ $state->stateName }}"> 
 																		</div>
 																		<div class="col-md-12 m-b-20">
                                                                             <select id="soflow">
-																				<option value="">Choose Country</option>
+																				<option disabled>Choose Country</option>
                                                                                 @isset($countries)
                                                                                     @foreach($countries as $country)
                                                                                         <option value="{{ $country->id }}">{{ $country->countryName }}</option>
@@ -72,25 +85,27 @@ Manage Location - State
 																			</select> 
 																		</div
                                                                         <div class="col-md-12 m-b-20">
-																			<select id="soflow">
-																				<option value="Null">IsActive</option>
-																				<option value="yes" id="yes">Yes</option>
-																				<option value="no" id="no">No</option>														  
+																			<select id="soflow" name="isVisible">
+																				<option value="Null" disabled>IsActive</option>
+																				<option value="1">Yes</option>
+                                                                                <option value="0">No</option>   													  
 																			</select> 
 																		</div>
                                                                     </div>
-                                                                </from>
-                                                            </div>
+                                                                
+                                                            
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Submit</button>
+                                                                <button type="submit" class="btn btn-info waves-effect">Update</button>
                                                                 <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
                                                             </div>
+                                                            </form>
                                                         </div>
                                                         <!-- /.modal-content -->
                                                     </div>												
                                                     <!-- /.modal-dialog -->
                                                 </div>
-											
+											   @endforeach
+                                            @endisset
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -104,14 +119,16 @@ Manage Location - State
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="mdi mdi-close"></i></button>
                                                                 <h4 class="modal-title" id="myModalLabel">Add State</h4> </div>
+                                                                <form class="form-horizontal form-material" action="state" method="post">
                                                             <div class="modal-body">
-                                                                <from class="form-horizontal form-material">
+                                                                {{ csrf_field() }}
+                                                                
                                                                     <div class="form-group">
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="StateName"> 
+                                                                            <input type="text" class="form-control" name="stateName" placeholder="StateName"> 
 																		</div>
                                                                         <div class="col-md-12 m-b-20">
-																			<select id="soflow">
+																			<select id="soflow" name="countryId">
 																				<option value="">Choose Country</option>
                                                                                 @isset($countries)
                                                                                     @foreach($countries as $country)
@@ -121,19 +138,20 @@ Manage Location - State
 																			</select> 
 																		</div>
                                                                        <div class="col-md-12 m-b-20">
-																	   		<select id="soflow">
-																				<option value="Null">IsActive</option>
-																				<option value="yes" id="yes">Yes</option>
-																				<option value="no" id="no">No</option>														  
+																	   		<select id="soflow" name="isVisible">
+																				<option value="Null" disabled selected>IsActive</option>
+																				<option value="1" id="yes">Yes</option>
+																				<option value="0" id="no">No</option>														  
 																			</select> 
 																	   </div>
                                                                     </div>
-                                                                </from>
+                                                                
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Submit</button>
+                                                                <button type="submit" class="btn btn-info waves-effect">Submit</button>
                                                                 <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
                                                             </div>
+                                                        </form>
                                                         </div>
                                                         <!-- /.modal-content -->
                                                     </div>												

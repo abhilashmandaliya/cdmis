@@ -38,7 +38,9 @@ class StateController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = State::create($data)->id;
+        return $this->index();
     }
 
     /**
@@ -72,7 +74,10 @@ class StateController extends Controller
      */
     public function update(Request $request, State $state)
     {
-        //
+        $state->stateName = $request['stateName'];
+        $state->isVisible = $request['isVisible'];
+        $state->save();
+        return $this->index();
     }
 
     /**
@@ -83,6 +88,7 @@ class StateController extends Controller
      */
     public function destroy(State $state)
     {
-        //
+        $state->delete();
+        return $this->index();
     }
 }
