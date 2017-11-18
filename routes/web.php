@@ -30,4 +30,6 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('programCategory', 'ProgramCategoryController');
 	Route::resource('programList', 'ProgramListController');
 	Route::resource('courseList', 'CourseListController');
+	Route::resource('facility', 'FacilityController');
+	Route::resource('event', 'EventController');
 });

@@ -14,7 +14,8 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        //
+         $facilities = Facility::paginate(5);
+        return view('admin.facility.index', ['facilities' => $facilities]);
     }
 
     /**
@@ -35,7 +36,9 @@ class FacilityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = Facility::create($data)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class FacilityController extends Controller
      */
     public function update(Request $request, Facility $facility)
     {
-        //
+        $facility->facilityName = $request['facilityName'];
+        $facility->isActive = $request['isActive'];
+        $facility->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class FacilityController extends Controller
      */
     public function destroy(Facility $facility)
     {
-        //
+         $facility->delete();
+        return $this->index();
     }
 }
