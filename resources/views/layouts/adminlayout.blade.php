@@ -232,23 +232,19 @@
 					<!-- Manage Education Basics -->
 						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-school fa-fw"></i> <span class="hide-menu">Manage Basics<span class="fa arrow"></span></span></a>
 							<ul class="nav nav-second-level"> 
-								<li> <a href="viewInstituteCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Institute Category</a></li>
-							</ul>
-							<ul class="nav nav-second-level"> 
+								<li> <a href="viewInstituteCategory.html" class="waves-effect">
+                                    <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+                                    <span class="hide-menu">Institute Category></span>
+                                </a>
+                            </li>
 								<li> <a href="/boardList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
-							</ul>
 							
-							<ul class="nav nav-second-level"> 
 								<li> <a href="viewStreamCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Stream category</span></a></li>
-							</ul>			
 							
-							<ul class="nav nav-second-level"> 
 								<li> <a href="viewProgramCategory.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
-							</ul>
-							<ul class="nav nav-second-level"> 
+							
 								<li> <a href="viewProgramList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
-							</ul>							
-							<ul class="nav nav-second-level"> 
+							
 								<li> <a href="viewCourseList.html" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
 							</ul>							
 						</li>  					
