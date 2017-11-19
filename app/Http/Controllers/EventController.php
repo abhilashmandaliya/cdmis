@@ -14,7 +14,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+         $events = Event::paginate(5);
+        return view('admin.event.index', ['events' => $events]);
     }
 
     /**
@@ -35,7 +36,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = Event::create($data)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        //
+        $event->eventName = $request['eventName'];
+        $event->isActive = $request['isActive'];
+        $event->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->delete();
+        return $this->index();
     }
 }

@@ -14,7 +14,8 @@ class InstituteCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = InstituteCategory::paginate(5);
+        return view('admin.instituteCategories.index', ['categories' => $categories]);
     }
 
     /**
@@ -35,7 +36,9 @@ class InstituteCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $id = InstituteCategory::create($data)->id;
+        return $this->index();
     }
 
     /**
@@ -69,7 +72,10 @@ class InstituteCategoryController extends Controller
      */
     public function update(Request $request, InstituteCategory $instituteCategory)
     {
-        //
+        $instituteCategory->categoryName = $request['categoryName'];
+        $instituteCategory->isVisible = $request['isVisible'];
+        $instituteCategory->save();
+        return $this->index();
     }
 
     /**
@@ -80,6 +86,7 @@ class InstituteCategoryController extends Controller
      */
     public function destroy(InstituteCategory $instituteCategory)
     {
-        //
+        $instituteCategory->delete();
+        return $this->index();
     }
 }

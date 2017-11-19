@@ -25,12 +25,15 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('city', 'CityController');
 	Route::resource('user', 'UserController');
 	Route::resource('userType', 'UserTypeController');
+	Route::resource('instituteCategory', 'InstituteCategoryController');
 	Route::resource('consultancyBranch', 'ConsultancyBranchController');
 	Route::resource('boardList', 'BoardListController');
 	Route::resource('streamCategory', 'StreamCategoryController');
 	Route::resource('programCategory', 'ProgramCategoryController');
 	Route::resource('programList', 'ProgramListController');
 	Route::resource('courseList', 'CourseListController');
+	Route::resource('facility', 'FacilityController');
+	Route::resource('event', 'EventController');
 });
 
 Route::get('/testmail', function() {
