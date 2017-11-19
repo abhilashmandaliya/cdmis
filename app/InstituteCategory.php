@@ -19,7 +19,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \Carbon\Carbon $updated_at
  * 
  * @property \Illuminate\Database\Eloquent\Collection $institutes
- *
+ * @property \Illuminate\Database\Eloquent\Collection $institute_up_votes
  * @package App
  */
 class InstituteCategory extends Eloquent
@@ -36,5 +36,20 @@ class InstituteCategory extends Eloquent
 	public function institutes()
 	{
 		return $this->hasMany(\App\Institute::class, 'categoryId');
+	}
+
+	/**
+     * Get all of the upvotes for the specific institute
+     */
+	public function institute_up_votes()
+	{
+		return $this->hasManyThrough(
+			'App\InstituteUpVote', 
+			'App\Institute',
+			'categoryId',
+			'instituteId',
+			'id',
+			'id'
+		);
 	}
 }

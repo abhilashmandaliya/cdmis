@@ -232,9 +232,9 @@
 					<!-- Manage Education Basics -->
 						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-school fa-fw"></i> <span class="hide-menu">Manage Basics<span class="fa arrow"></span></span></a>
 							<ul class="nav nav-second-level"> 
-								<li> <a href="viewInstituteCategory.html" class="waves-effect">
+								<li> <a href="/instituteCategory" class="waves-effect">
                                     <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
-                                    <span class="hide-menu">Institute Category></span>
+                                    <span class="hide-menu">Institute Category</span>
                                 </a>
                             </li>
 								<li> <a href="/boardList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
@@ -281,35 +281,17 @@
 					<!-- End Manage User -->
 					
 					<!-- Manage Institute -->
-						<li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
 							<ul class="nav nav-second-level"> 
 								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">School</span><span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
 										<li> <a href="viewSchool.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw"></i><span class="hide-menu">Add</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw"></i><span class="hide-menu">Delete</span></a> </li>
+										<li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
+										<li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
+										<li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>									
 									</ul>
 								</li>
 							</ul>
-							<ul class="nav nav-second-level"> 
-								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-school fa-fw"></i><span class="hide-menu">College</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="nav nav-second-level"> 
-								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-home fa-fw"></i><span class="hide-menu">Private Institute</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">T</i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Add</span></a> </li>
-										<li> <a href="javascript:void(0)"><i class=" fa-fw">M</i><span class="hide-menu">Delete</span></a> </li>
-									</ul>
-								</li>
-							</ul>
-
 						</li>					
 					<!-- End Manage Institute -->					
                 </ul>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\InstituteCategory;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class InstituteCategoryController extends Controller
 {
     /**
@@ -49,7 +49,8 @@ class InstituteCategoryController extends Controller
      */
     public function show(InstituteCategory $instituteCategory)
     {
-        //
+        $institutes = DB::select(DB::raw("SELECT a.id, a.instituteName, a.categoryId, a.isVisible, b.categoryName, (SELECT COUNT(*) FROM institute_up_votes WHERE instituteId = a.id) AS 'upVotes', (SELECT COUNT(*) FROM institute_suggestions WHERE instituteId = a.id) AS 'suggested'FROM institutes a  INNER JOIN institute_categories b ON a.categoryId = b.id WHERE a.categoryId = $instituteCategory->id"));
+        return view('admin.institute.index', ['institutes' => $institutes, 'instituteCategory' => $instituteCategory->categoryName]);
     }
 
     /**
