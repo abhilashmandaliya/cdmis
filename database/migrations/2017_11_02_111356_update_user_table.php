@@ -15,12 +15,12 @@ class UpdateUserTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('userTypeId')->unsigned();
-            $table->integer('branchId')->unsigned();
-            $table->integer('accountCreatorId')->unsigned();
-            $table->boolean('isVisible');
             $table->foreign('userTypeId')->references('id')->on('user_types');
+            $table->integer('branchId')->unsigned();
             $table->foreign('branchId')->references('id')->on('consultancy_branches');
+            $table->integer('accountCreatorId')->unsigned();
             $table->foreign('accountCreatorId')->references('id')->on('users');            
+            $table->boolean('isVisible');
         });
     }
 
@@ -31,8 +31,6 @@ class UpdateUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['userTypeId', 'branchId', 'accountCreatorId', 'isVisible']);
-        });
+        
     }
 }

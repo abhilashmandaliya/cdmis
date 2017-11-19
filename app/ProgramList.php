@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:36 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -22,6 +22,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property \App\ProgramCategory $program_category
  * @property \App\StreamCategory $stream_category
+ * @property \Illuminate\Database\Eloquent\Collection $institute_programs
  *
  * @package App
  */
@@ -48,5 +49,10 @@ class ProgramList extends Eloquent
 	public function stream_category()
 	{
 		return $this->belongsTo(\App\StreamCategory::class, 'streamId');
+	}
+
+	public function institute_programs()
+	{
+		return $this->hasMany(\App\InstituteProgram::class, 'programId');
 	}
 }

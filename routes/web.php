@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ClientRegistered;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,4 +31,8 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('programCategory', 'ProgramCategoryController');
 	Route::resource('programList', 'ProgramListController');
 	Route::resource('courseList', 'CourseListController');
+});
+
+Route::get('/testmail', function() {
+	Mail::to('abhilashmandaliya@gmail.com')->send(new ClientRegistered());	
 });

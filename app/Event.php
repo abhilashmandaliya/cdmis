@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:35 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -19,6 +19,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property bool $isActive
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $institutes
  *
  * @package App
  */
@@ -39,4 +41,11 @@ class Event extends Eloquent
 		'end_date_time',
 		'isActive'
 	];
+
+	public function institutes()
+	{
+		return $this->belongsToMany(\App\Institute::class, 'institute_events', 'eventId', 'instituteId')
+					->withPivot('id', 'isVisible')
+					->withTimestamps();
+	}
 }

@@ -16,7 +16,8 @@ class CreateInstitutionsTable extends Migration
         Schema::create('institutes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('instituteName');
-            $table->integer('categoryId')->references('id')->on('institute_categories');
+            $table->integer('categoryId')->unsigned();
+            $table->foreign('categoryId')->references('id')->on('institute_categories');
             $table->boolean('isVisible');
             $table->timestamps();
         });

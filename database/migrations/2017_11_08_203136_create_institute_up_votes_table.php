@@ -15,8 +15,10 @@ class CreateInstituteUpVotesTable extends Migration
     {
         Schema::create('institute_up_votes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('clientId')->references('id')->on('client_data');
-            $table->integer('instituteId')->references('id')->on('institutes');
+            $table->integer('clientId')->unsigned();
+            $table->foreign('clientId')->references('id')->on('client_data');
+            $table->integer('instituteId')->unsigned();
+            $table->foreign('instituteId')->references('id')->on('institutes');
             $table->boolean('isVerified');
             $table->boolean('isVisible');
             $table->timestamps();

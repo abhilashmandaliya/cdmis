@@ -15,10 +15,13 @@ class CreateInstituteProgramsTable extends Migration
     {
         Schema::create('institute_programs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('instituteId')->references('id')->on('institutes');
-            $table->integer('programId')->references('id')->on('programs');
+            $table->integer('instituteId')->unsigned();
+            $table->foreign('instituteId')->references('id')->on('institutes');
+            $table->integer('programId')->unsigned();            
+            $table->foreign('programId')->references('id')->on('program_lists');
             $table->string('programLink');
-            $table->integer('boardId')->references('id')->on('boards');
+            $table->integer('boardId')->unsigned();            
+            $table->foreign('boardId')->references('id')->on('board_lists');
             $table->integer('programFees');
             $table->boolean('isVisible');
             $table->timestamps();

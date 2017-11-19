@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateConsultancyBranchTable extends Migration
+class UpdateInstituteCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateConsultancyBranchTable extends Migration
      */
     public function up()
     {
-        Schema::table('consultancy_branches', function(Blueprint $table) {
-            $table->string('branchName')->after('id');
+        Schema::table('institute_cities', function(Blueprint $table) {
+            $table->string('address')->after('instituteId');
         });
     }
 
