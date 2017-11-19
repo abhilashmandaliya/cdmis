@@ -15,7 +15,8 @@ class CreateInstituteSuggestionsTable extends Migration
     {
         Schema::create('institute_suggestions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('clientId')->references('id')->on('client_data');
+            $table->integer('clientId')->unsigned();
+            $table->foreign('clientId')->references('id')->on('client_data');
             $table->boolean('isSelectionDone');
             $table->boolean('isVisible');
             $table->timestamps();

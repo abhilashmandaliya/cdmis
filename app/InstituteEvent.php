@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:35 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -18,6 +18,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property bool $isVisible
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \App\Event $event
+ * @property \App\Institute $institute
  *
  * @package App
  */
@@ -34,4 +37,14 @@ class InstituteEvent extends Eloquent
 		'instituteId',
 		'isVisible'
 	];
+
+	public function event()
+	{
+		return $this->belongsTo(\App\Event::class, 'eventId');
+	}
+
+	public function institute()
+	{
+		return $this->belongsTo(\App\Institute::class, 'instituteId');
+	}
 }

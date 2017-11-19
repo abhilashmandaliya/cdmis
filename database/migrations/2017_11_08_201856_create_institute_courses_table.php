@@ -15,8 +15,10 @@ class CreateInstituteCoursesTable extends Migration
     {
         Schema::create('institute_courses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('courseId')->references('id')->on('courses');
-            $table->integer('instituteProgramId')->references('id')->on('institute_programs');
+            $table->integer('courseId')->unsigned();
+            $table->foreign('courseId')->references('id')->on('course_lists');
+            $table->integer('instituteProgramId')->unsigned();            
+            $table->foreign('instituteProgramId')->references('id')->on('institute_programs');
             $table->boolean('isVisible');
             $table->timestamps();
         });

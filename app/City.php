@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:35 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -21,6 +21,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * 
  * @property \App\State $state
  * @property \Illuminate\Database\Eloquent\Collection $consultancy_branches
+ * @property \Illuminate\Database\Eloquent\Collection $institute_cities
  *
  * @package App
  */
@@ -45,5 +46,10 @@ class City extends Eloquent
 	public function consultancy_branches()
 	{
 		return $this->hasMany(\App\ConsultancyBranch::class, 'branchCity');
+	}
+
+	public function institute_cities()
+	{
+		return $this->hasMany(\App\InstituteCity::class, 'cityId');
 	}
 }

@@ -15,8 +15,10 @@ class CreateInstituteFacilitiesTable extends Migration
     {
         Schema::create('institute_facilities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('facilityId')->references('id')->on('facilities');
-            $table->integer('instituteId')->references('id')->on('institutes');
+            $table->integer('facilityId')->unsigned();
+            $table->foreign('facilityId')->references('id')->on('facilities');
+            $table->integer('instituteId')->unsigned();
+            $table->foreign('instituteId')->references('id')->on('institutes');
             $table->boolean('isVisible');
             $table->timestamps();
         });

@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:35 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -17,6 +17,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property bool $isActive
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $institute_courses
  *
  * @package App
  */
@@ -30,4 +32,9 @@ class CourseList extends Eloquent
 		'courseName',
 		'isActive'
 	];
+
+	public function institute_courses()
+	{
+		return $this->hasMany(\App\InstituteCourse::class, 'courseId');
+	}
 }

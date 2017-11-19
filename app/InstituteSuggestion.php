@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 18 Nov 2017 11:33:36 +0000.
+ * Date: Sun, 19 Nov 2017 10:58:38 +0000.
  */
 
 namespace App;
@@ -18,6 +18,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property bool $isVisible
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ * 
+ * @property \App\ClientDatum $client_datum
  *
  * @package App
  */
@@ -34,4 +36,9 @@ class InstituteSuggestion extends Eloquent
 		'isSelectionDone',
 		'isVisible'
 	];
+
+	public function client_datum()
+	{
+		return $this->belongsTo(\App\ClientDatum::class, 'clientId');
+	}
 }

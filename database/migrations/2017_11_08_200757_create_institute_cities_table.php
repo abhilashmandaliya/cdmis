@@ -15,8 +15,10 @@ class CreateInstituteCitiesTable extends Migration
     {
         Schema::create('institute_cities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('instituteId')->references('id')->on('institutes');
-            $table->integer('cityId')->references('id')->on('cities');
+            $table->integer('instituteId')->unsigned();
+            $table->foreign('instituteId')->references('id')->on('institutes');
+            $table->integer('cityId')->unsigned();            
+            $table->foreign('cityId')->references('id')->on('cities');
             $table->string('websiteLink');
             $table->string('contactNumber');
             $table->boolean('isVisible');
