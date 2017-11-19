@@ -200,7 +200,7 @@
                             </a>
 							<ul class="nav nav-second-level"> 
 								<li>
-                                    <a href="country" class="waves-effect">
+                                    <a href="/country" class="waves-effect">
                                         <i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
                                         <span class="hide-menu">Country</span>
                                     </a>
@@ -271,9 +271,11 @@
 							<ul class="nav nav-second-level"> 
 								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account fa-fw"></i><span class="hide-menu">View User</span><span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
-										<li> <a href="viewAdmin.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Admin</span></a> </li>
-										<li> <a href="viewConsultant.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Consultant</span></a> </li>
-										<li> <a href="viewClient.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">Client</span></a> </li>
+                                        @isset($_userTypes)
+                                            @foreach($_userTypes as $_userType)
+                                                <li> <a href="/userType/{{ $_userType->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">{{ $_userType->typeName }}</span></a> </li>
+                                            @endforeach
+                                        @endisset
 									</ul>
 								</li>
 							</ul>

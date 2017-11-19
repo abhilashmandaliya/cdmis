@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\UserType;
+use App\User;
+use App\ConsultancyBranch;
 use Illuminate\Http\Request;
 
 class UserTypeController extends Controller
@@ -49,7 +51,9 @@ class UserTypeController extends Controller
      */
     public function show(UserType $userType)
     {
-        //
+      $users = UserType::with('users')
+                ->where('id', $userType->id)->get();
+        return view('admin.user.show', ['users' => $users]);
     }
 
     /**
