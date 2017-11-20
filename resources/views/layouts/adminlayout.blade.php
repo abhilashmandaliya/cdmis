@@ -284,16 +284,20 @@
 					
 					<!-- Manage Institute -->
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
-							<ul class="nav nav-second-level"> 
-								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">School</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="viewSchool.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
-										<li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
-										<li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>									
-									</ul>
-								</li>
-							</ul>
+                            @isset($_instituteCategories)
+                                @foreach($_instituteCategories as $_instituteCategory)
+                                    <ul class="nav nav-second-level"> 
+                                        <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">{{ $_instituteCategory->categoryName }}</span><span class="fa arrow"></span></a>
+                                            <ul class="nav nav-third-level">
+                                                <li> <a href="/instituteCategory/{{ $_instituteCategory->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
+                                                <li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
+                                                <li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
+                                                <li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>									
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                @endforeach
+                            @endisset
 						</li>					
 					<!-- End Manage Institute -->					
                 </ul>
