@@ -44,7 +44,7 @@ Manage {{ $instituteCategory }}
                                                             <button type="button" id="moreDetailClick" class="btn btn-info btn-rounded" onclick="window.open('/institute/{{ $institute->id }}')">More Detail</button>
                                                         </td>
                                                         <td>
-                                                            <button type="button" id="updateClick" class="btn btn-info btn-rounded" onclick="editSchoolDetail()"><i class="fa fa-edit fa-fw" ></i>update</button>												
+                                                            <button type="button" id="updateClick" class="btn btn-info btn-rounded" onclick="window.open('/institute/{{ $institute->id }}/edit')"><i class="fa fa-edit fa-fw" ></i>update</button>												
                                                         </td>
                                                         <td>
                                                             <button class="btn btn-block btn-danger btn-rounded" id="deleteClick">Delete</button>
