@@ -64,7 +64,7 @@ Admin Dashboard
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
                         <div class="white-box">
-                        <h3 class="box-title">Monthly visitors the current year</h3>                            
+                        <h3 class="box-title">Monthly visitors of the current year</h3>                            
                             <div id="ct-visits" style="height: 230px;">
                                 <canvas id="canvas2"></canvas>
                             </div>

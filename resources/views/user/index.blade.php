@@ -1,11 +1,19 @@
-@extends('layouts.userlayout')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title')
-C.D.M.I.S
-@endsection
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-@section('content')
+<link rel="stylesheet" type="text/css"
+	href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+<link rel="style.css">
 
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 <style>
 	.center {
     margin-top:50px;   
@@ -163,66 +171,191 @@ C.D.M.I.S
 	border-width:8px;
 }
 </style>
+<title>CDMIS</title>
 
-<header class="masthead text-center text-white d-flex">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+	rel='stylesheet' type='text/css'>
+<link
+	href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+	rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/creative.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
+		id="mainNav">
+		<div class="container">
+			<a class="navbar-brand js-scroll-trigger" href="#page-top"><b>CDMIS</b></a>
+			<button class="navbar-toggler navbar-toggler-right" type="button"
+				data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#about">About</a></li>
+
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#contact">Contact</a></li>
+
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="#feedback">Feedback</a></li>
+					
+					<li class="nav-item"><a class="nav-link js-scroll-trigger"
+						href="/login">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header class="masthead text-center text-white d-flex">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
-					<h1 class="text-uppercase">
-						<strong>Enhance Your Knowledge For Carrer</strong>
-					</h1>
+					<p >
+						<font size="200px" color="white">
+						<b>Enhance Your Knowledge For A Brighter Career</b>
+						</font>
+					</p>
 					<hr>
 				</div>
 				<div class="col-lg-8 mx-auto">
-					<p class="text-faded mb-5">Start Bootstrap can help you build
-						better websites using the Bootstrap CSS framework! Just download
-						your template and start going, no strings attached!</p>
-					<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find
-						Out More</a>
+					<p class="text-faded mb-5"><font size="5px" color="white">Career Development Management Information System</font></p>					
 				</div>
 			</div>
 		</div>
 	</header>
 
-<section class="bg-primary" id="about">
+	<section class="bg-primary" id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading text-white">We've got what you
 						need!</h2>
 					<hr class="light my-4">
-					<p class="text-faded mb-4">Start Bootstrap has everything you
-						need to get your new website up and running in no time! All of the
-						templates and themes on Start Bootstrap are open source, free to
-						download, and easy to use. No strings attached!</p>
-					<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get
-						Started!</a>
+					<p class="text-faded mb-4"><b>Worried about how will you figure out which institue to choose that can match up to your desires!</b><br><br>
+					Here we are to help you.
+					Just talk to our consultant and tell them what are you looking for they will get back you with the best results helping you to decide where you want to go and which institue you want to choose in order to shape your future the best way as we understand your worries and know how important it is to select a right institute in order to have a brighter career</p>
+					
 				</div>
 			</div>
 		</div>
 	</section>
 
-    @isset($institutes)
-    
-    <section class="p-0" id="Partners">
-		<div class="container-fluid p-0">
-			<div class="row no-gutters popup-gallery">
-				@foreach($institutes as $institute)
-                    <div class="col-lg-4 col-sm-6">
-                        <a class="portfolio-box" href="{{ $institute->logo_path }}"> <img
-                            class="img-fluid" src="{{ $institute->logo_path }}" alt="">
-                            <div class="portfolio-box-caption">
-                                <div class="portfolio-box-caption-content">
-                                    <div class="project-category text-faded"></div>
-                                    <div class="project-name">{{ $institute->instituteName }}</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
+	<section id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 mx-auto text-center">
+					<h2 class="section-heading" style="color: black;">Let's Get In Touch!</h2>
+					<hr class="my-4">
+					<p class="mb-5" style="color: black;" ><b>Ready to join our family?</b><br><br>
+						This is where you need to call and we would be delighted to help you<br><br> 
+						<font size="5px" color="green"><b>9876543210</b></font>
+						</p>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+
+	<section id="feedback" class="bg-primary">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2 class="section-heading text-faded mb-5">Give Your Feedback</h2>
+					<hr class="my-4">
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 ">
+					<div class="service-box mt-12 ">
+						<form method="post">
+							<div class="control-group">
+								<label>Email:</label><input type="email" placeholder="Email address given at the time of visit" class="form-control" />
+
+								<label>Token:</label><input type="text" class="form-control" placeholder='Mailed with title "C.D.M.I.S. Feedback Token"' />
+								<br>
+								<button type="button" class="btn btn-success" data-toggle="modal" data-target="#feedbackModal">Proceed</button>
+							</div>
+							<br>
+						</form>
+
+						<!-- line modal -->
+						<div class="modal fade" id="feedbackModal" tabindex="-1"
+							role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+										</button>
+										<h3 class="modal-title" id="lineModalLabel">Feedback</h3>
+									</div>
+									<div class="modal-body">
+
+
+										<div class="service-box mt-12 feedbacked">
+
+											<label>Feedback:</label>
+											<textarea class="form-control"></textarea>
+											Colleges:<select class='form-control'>
+												<option>DAICT</option>
+												<option>Somlalit</option>
+											</select> <br>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<div class="btn-group btn-group-justified" role="group"
+											aria-label="group button">
+											<div class="btn-group" role="group">
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal" role="button">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+
+					
+					
 			</div>
 		</div>
 	</section>
-    @endisset
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+	<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<!-- Custom scripts for this template -->
+	<script src="js/creative.min.js"></script>
+</body>
 
-@endsection
+</html>
