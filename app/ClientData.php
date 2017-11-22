@@ -27,8 +27,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App
  */
-class ClientDatum extends Eloquent
+class ClientData extends Eloquent
 {
+	protected $table = "client_data";
+	
 	protected $casts = [
 		'emailSentFlag' => 'bool',
 		'isVisible' => 'bool'

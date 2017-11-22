@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\InstituteSuggestion;
+use App\InstituteUpVote;
+use App\ClientData;
 use Illuminate\Http\Request;
+use Response;
 
 class InstituteSuggestionController extends Controller
 {
@@ -81,5 +84,16 @@ class InstituteSuggestionController extends Controller
     public function destroy(InstituteSuggestion $instituteSuggestion)
     {
         //
+    }
+
+    public function upvote(Request $request)
+    {        
+        $request['isVerified'] = $request['isVisible'] = true;
+        InstituteUpVote::create($request->all());
+        InstituteSuggestion::where('clientId', $request['clientId'])
+                            ->update(['isVisible' => 0, 'isSelectionDone' => true]);
+        ClientData::where('id', $request['clientId'])
+                    ->update(['isVisible' => 0]);
+        return response()->redirectTo('/');
     }
 }
