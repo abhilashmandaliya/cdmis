@@ -8,15 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/plugins/images/favicon.png">
     <title>@yield('title')</title>
     <!-- Bootstrap Core CSS -->
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Footable CSS -->
-    <link href="../plugins/bower_components/footable/css/footable.core.css" rel="stylesheet">
-    <link href="../plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/plugins/bower_components/footable/css/footable.core.css" rel="stylesheet">
+    <link href="/plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
     <!-- Menu CSS -->
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- animation CSS -->
     <link href="/css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -24,14 +24,14 @@
     <!-- color CSS -->
     <link href="/css/colors/default.css" id="theme" rel="stylesheet">    
     <!-- toast CSS -->
-    <link href="../plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link href="/plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- morris CSS -->
-    <link href="../plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
     <!-- chartist CSS -->
-    <link href="../plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="../plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="/plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="/plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!-- Calendar CSS -->
-    <link href="../plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
+    <link href="/plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
     
     <!-- CSS For dropdown-->
     <style>
@@ -118,10 +118,10 @@
                     <!-- Logo -->
                     <a class="logo" href="index.html">
                         <!-- Logo icon image, you can use font-icon also --><b>
-                        <!--This is dark logo icon--><img src="../plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="../plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo icon--><img src="/plugins/images/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/plugins/images/admin-logo-dark.png" alt="home" class="light-logo" />
                      </b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="../plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="../plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo text--><img src="/plugins/images/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="/plugins/images/admin-text-dark.png" alt="home" class="light-logo" />
                      </span></a>
                 </div>
                 <!-- /Logo -->
@@ -131,11 +131,11 @@
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                      <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b><span class="caret"></span> </a>
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="/plugins/images/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b><span class="caret"></span> </a>
                         <ul class="dropdown-menu dropdown-user animated flipInY">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="../plugins/images/users/varun.jpg" alt="user" /></div>
+                                    <div class="u-img"><img src="/plugins/images/users/varun.jpg" alt="user" /></div>
                                     <div class="u-text">
                                         <h4>Steave Jobs</h4>
                                         <p class="text-muted">varun@gmail.com</p>
@@ -173,7 +173,7 @@
                     <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
                 <div class="user-profile">
                     <div class="dropdown user-pro-body">
-                        <div><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"></div>
+                        <div><img src="/plugins/images/users/varun.jpg" alt="user-img" class="img-circle"></div>
                         <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Steave Gection <span class="caret"></span></a>
                         <ul class="dropdown-menu animated flipInY">
                             <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
@@ -284,16 +284,20 @@
 					
 					<!-- Manage Institute -->
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
-							<ul class="nav nav-second-level"> 
-								<li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">School</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="viewSchool.html"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
-										<li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
-										<li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>									
-									</ul>
-								</li>
-							</ul>
+                            @isset($_instituteCategories)
+                                @foreach($_instituteCategories as $_instituteCategory)
+                                    <ul class="nav nav-second-level"> 
+                                        <li> <a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">{{ $_instituteCategory->categoryName }}</span><span class="fa arrow"></span></a>
+                                            <ul class="nav nav-third-level">
+                                                <li> <a href="/instituteCategory/{{ $_instituteCategory->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
+                                                <li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
+                                                <li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
+                                                <li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>									
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                @endforeach
+                            @endisset
 						</li>					
 					<!-- End Manage Institute -->					
                 </ul>
@@ -329,11 +333,11 @@
         
     </script>
     <!-- jQuery -->
-    <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
     <!--slimscroll JavaScript -->
     <script src="/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
@@ -341,12 +345,12 @@
     <!-- Custom Theme JavaScript -->
     <script src="/js/custom.min.js"></script>
     <!-- Footable -->
-    <!--<script src="../plugins/bower_components/footable/js/footable.all.min.js"></script>-->
-    <script src="../plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <!--<script src="/plugins/bower_components/footable/js/footable.all.min.js"></script>-->
+    <script src="/plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
     <!--FooTable init-->
-    <script src="/js/footable-init.js"></script>
+    <!--<script src="/js/footable-init.js"></script>-->
     <!--Style Switcher -->
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
+    <script src="/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
     <!-- Change Password Modal -->
 				
     <div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">

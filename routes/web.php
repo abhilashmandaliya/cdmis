@@ -34,6 +34,7 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('courseList', 'CourseListController');
 	Route::resource('facility', 'FacilityController');
 	Route::resource('event', 'EventController');
+	Route::resource('institute', 'InstituteController');
 });
 
 Route::get('/testmail', function() {

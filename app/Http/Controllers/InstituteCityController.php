@@ -69,7 +69,13 @@ class InstituteCityController extends Controller
      */
     public function update(Request $request, InstituteCity $instituteCity)
     {
-        //
+        $instituteCity['cityId'] = $request['cityId'];
+        $instituteCity['address'] = $request['address'];
+        $instituteCity['websiteLink'] = $request['websiteLink'];
+        $instituteCity['contactNumber'] = $request['contactNumber'];
+        $instituteCity['isVisible'] = $request['isVisible'];
+        $instituteCity->save();
+        return $this->index();
     }
 
     /**

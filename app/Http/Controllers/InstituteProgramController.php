@@ -69,7 +69,12 @@ class InstituteProgramController extends Controller
      */
     public function update(Request $request, InstituteProgram $instituteProgram)
     {
-        //
+        $instituteProgram['programFees'] = $request['programFees'];
+        $instituteProgram['boardId'] = $request['boardId'];
+        $instituteProgram['programId'] = $request['programId'];
+        $instituteProgram['programLink'] = $request['programLink'];
+        $instituteProgram->save();
+        return $this->index();
     }
 
     /**
