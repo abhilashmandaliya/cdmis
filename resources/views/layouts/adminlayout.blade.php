@@ -253,8 +253,8 @@
 					<!-- Manage Extra Activities -->
 					    <li> <a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-plus-box fa-fw"></i> <span class="hide-menu">Manage Extra<span class="fa arrow"></span></span></a>
 							<ul class="nav nav-second-level">
-								<li> <a href="viewFacility.html"><i data-icon="/" class="mdi mdi-seat-recline-extra fa-fw"></i><span class="hide-menu">Facilities</span></a> </li>
-								<li> <a href="viewEvents.html"><i data-icon="/" class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">Events</span></a> </li>
+								<li> <a href="/facility"><i data-icon="/" class="mdi mdi-seat-recline-extra fa-fw"></i><span class="hide-menu">Facilities</span></a> </li>
+								<li> <a href="/event"><i data-icon="/" class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">Events</span></a> </li>
 							</ul>
 						</li>											
 					<!-- End Manage Activities -->

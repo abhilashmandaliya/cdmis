@@ -32,7 +32,7 @@ Manage Program Category
                                                 @foreach($programCategories as $programCategory)
                                                     <tr>
                                                         <td id="programCategoryId" value="">{{ $programCategory->id }}</td>
-                                                        <td id="programCategoryName" value="">{{ $programCategory->programCategoryName }}r</td>
+                                                        <td id="programCategoryName" value="">{{ $programCategory->programCategoryName }}</td>
                                                         <td id="isActive" value="">{{ $programCategory->isVisible }}</td>
                                                         <td>
                                                             <button class="btn btn-block btn-sm btn-info btn-rounded" data-toggle="modal" data-target="#updateProgramCategory{{ $programCategory->id }}">
