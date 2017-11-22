@@ -15,14 +15,14 @@ Manage {{ $instituteCategory }}
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">View {{ $instituteCategory }</h3>
+                            <h3 class="box-title">View {{ $instituteCategory }}</h3>
                             <div class="scrollable">
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
 												<th>ID</th>
-                                                <th>School</th>
+                                                <th>{{ $instituteCategory }}</th>
 												<th>Suggested</th>
                                                 <th>Upvotes</th>
 												<th>isActive</th>
@@ -32,22 +32,26 @@ Manage {{ $instituteCategory }}
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-												<td id="schoolId" value="">1</td>
-                                                <td id="schoolName" value="">Abhijat vidhya vihar</td>
-                                                <td id="schoolSuggestedCount" value="">43</td>
-												<td id="schoolUpvotesCount" value="">39</td>
-                                                <td id="isActive" value="">Yes</td>
-												<td>
-                                                    <button type="button" id="moreDetailClick" class="btn btn-info btn-rounded" onclick="moreSchoolDetail()">More Detail</button>																						
-												</td>
-												<td>
-                                                    <button type="button" id="updateClick" class="btn btn-info btn-rounded" onclick="editSchoolDetail()"><i class="fa fa-edit fa-fw" ></i>update</button>												
-												</td>
-												<td>
-													<button class="btn btn-block btn-danger btn-rounded" id="deleteClick">Delete</button>
-												</td>
-                                            </tr>																								
+                                            @isset($institutes)
+                                                @foreach($institutes as $institute)
+                                                    <tr>
+                                                        <td id="schoolId" value="">{{ $institute->id }}</td>
+                                                        <td id="schoolName" value="">{{ $institute->instituteName }}</td>
+                                                        <td id="schoolSuggestedCount" value="">{{ $institute->suggested }}</td>
+                                                        <td id="schoolUpvotesCount" value="">{{ $institute->upVotes }}</td>
+                                                        <td id="isActive" value="">{{ $institute->isVisible }}</td>
+                                                        <td>
+                                                            <button type="button" id="moreDetailClick" class="btn btn-info btn-rounded" onclick="window.open('/institute/{{ $institute->id }}')">More Detail</button>
+                                                        </td>
+                                                        <td>
+                                                            <button type="button" id="updateClick" class="btn btn-info btn-rounded" onclick="window.open('/institute/{{ $institute->id }}/edit')"><i class="fa fa-edit fa-fw" ></i>update</button>												
+                                                        </td>
+                                                        <td>
+                                                            <button class="btn btn-block btn-danger btn-rounded" id="deleteClick">Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @endisset																					
                                         </tbody>
                                         <tfoot>
                                             <tr>												
@@ -67,8 +71,6 @@ Manage {{ $instituteCategory }}
                 <!-- /row -->
 			<form>
             </div>
-            <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by themedesigner.in </footer>
         </div>
 
 @endsection
