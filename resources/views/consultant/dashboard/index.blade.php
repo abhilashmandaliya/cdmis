@@ -12,9 +12,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
     <title>CDMIS</title>        
     <!-- Bootstrap Core CSS -->
-   <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- page CSS -->
@@ -28,9 +28,9 @@
     <!-- animation CSS --
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <link href="/css/colors/default.css" id="theme" rel="stylesheet">
     
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -135,51 +135,87 @@
                 </div>
                 <div class="row">
                  <div class="col-lg-8 col-lg-offset-2">
-            <div class="input-group search-panel">
-               
-               <select class="form-control select2" placeholder='Search By Institute,Location,Courses,Program'>
-                                <option></option>
-                                <optgroup label="School">
-                                    <option value="AK">Kevashish Sankul</option>
-                                    <option value="HI">Sandhna Vidyamandir</option>
-                                    <option value="HI">Shivashish</option>
-                                    <option value="HI">Abhijat Vidyavihar</option>
-                                </optgroup>
-                                <optgroup label="Colleges">
-                                    <option value="CA">DAIICT</option>
-                                    <option value="NV">IIT</option>
-                                    <option value="OR">NIRMA</option>
-                                    <option value="WA">NIMS</option>                                    
-                                </optgroup>
-                                <optgroup label="Private Institute">
-                                    <option value="AZ">Star Dance Class</option>
-                                    <option value="CO">Ageta Sports Class</option>
-                                    <option value="ID">Endeavor coaching</option>
-                                    <option value="MT">Akashinfotech</option>
-                                </optgroup>
-                                <optgroup label="Program">
-                                    <option value="AL">M.tech</option>
-                                    <option value="AR">MSc(IT)</option>
-                                    <option value="IL">B.Tech</option>
-                                    <option value="IA">BCA</option>
-                                </optgroup>
-                                <optgroup label="Courses">
-                                    <option value="CT">Cloud Computing</option>
-                                    <option value="DE">Hadoop</option>
-                                    <option value="FL">React JS</option>
-                                    <option value="GA">Vue JS</option>
-                                </optgroup>
-                                <optgroup label="Location">
-                                    <option value="CT">Ahmedbad</option>
-                                    <option value="DE">Pune</option>
-                                    <option value="FL">Gandhinagar</option>
-                                    <option value="GA">Mumbai</option>
-                                </optgroup>
-                            </select>
-                
-                <span class="input-group-btn">
-                    <a class="btn btn-default" href="searchresult.html"><span class="glyphicon glyphicon-search"></span></a>
-                </span>
+            <div class="input-group search-panel">               
+                <input type="text" style='width:800px;' id="searchInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">                   
+                <table style='background-color:#ffffff' id="searchTable">
+                @isset($schools)
+                    @foreach($schools as $school)
+
+                         <tr><td onclick='event.preventDefault();document.getElementById("search_school_{{ $school->id }}").submit();'>
+                            <span value="{{ $school->id }}">{{ $school->instituteName }}</span>
+                                <form method='post' id='search_school_{{ $school->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='school'/>
+                                    <input type='hidden' name='data' value='{{ $school->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach
+                @endisset
+                 @isset($colleges)
+                    @foreach($colleges as $college)
+
+                         <tr><td onclick='event.preventDefault();document.getElementById("search_college_{{ $college->id }}").submit();'>
+                            <span value="{{ $college->id }}">{{ $college->instituteName }}</span>
+                                <form method='post' id='search_college_{{ $college->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='college'/>
+                                    <input type='hidden' name='data' value='{{ $college->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach
+                @endisset                                  
+                  @isset($private_institutes)
+                    @foreach($private_institutes as $private_institute)
+
+                          <tr><td onclick='event.preventDefault();document.getElementById("search_private_institute_{{ $private_institute->id }}").submit();'>
+                            <span value="{{ $private_institute->id }}">{{ $private_institute->instituteName }}</span>
+                                <form method='post' id='search_private_institute_{{ $private_institute->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='private_institute'/>
+                                    <input type='hidden' name='data' value='{{ $private_institute->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach
+                @endisset
+                  @isset($programs)
+                    @foreach($programs as $program)
+
+                         <tr><td onclick='event.preventDefault();document.getElementById("search_program_{{ $program->id }}").submit();'>
+                            <span value="{{ $program->id }}">{{ $program->programName }}</span>
+                                <form method='post' id='search_program_{{ $program->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='program'/>
+                                    <input type='hidden' name='data' value='{{ $program->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach
+                @endisset
+                @isset($courses)
+                    @foreach($courses as $course)
+
+                        <tr><td onclick='event.preventDefault();document.getElementById("search_course_{{ $course->id }}").submit();'>
+                            <span value="{{ $course->id }}">{{ $course->courseName }}</span>
+                                <form method='post' id='search_course_{{ $course->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='course'/>
+                                    <input type='hidden' name='data' value='{{ $course->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach
+                @endisset
+                 @isset($cities)
+                    @foreach($cities as $city)
+                        <tr><td onclick='event.preventDefault();document.getElementById("search_city_{{ $city->id }}").submit();'>
+                            <span value="{{ $city->id }}">{{ $city->cityName }}</span>
+                                <form method='post' id='search_city_{{ $city->id }}' action='/institute/custom'>
+                                    {{ csrf_field() }}
+                                    <input type='hidden' name='search' value='city'/>
+                                    <input type='hidden' name='data' value='{{ $city->id }}' />
+                                </form>
+                        </td></tr>
+                    @endforeach                                        
+                @endisset
+                </table>
             </div>
         </div>
                 </div>
@@ -235,15 +271,15 @@
 
         <script src="../plugins/bower_components/jquery/dist/jquery.min.js"></script>
         <!-- Bootstrap Core JavaScript -->
-        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Menu Plugin JavaScript -->
         <script src="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
         <!--slimscroll JavaScript -->
-        <script src="js/jquery.slimscroll.js"></script>
+        <script src="/js/jquery.slimscroll.js"></script>
         <!--Wave Effects -->
-        <script src="js/waves.js"></script>
+        <script src="/js/waves.js"></script>
         <!-- Custom Theme JavaScript -->
-        <script src="js/custom.min.js"></script>
+        <script src="/js/custom.min.js"></script>
         <script src="../plugins/bower_components/switchery/dist/switchery.min.js"></script>
         <script src="../plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
         <script src="../plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
@@ -321,11 +357,72 @@
                 });
                 return false;
             });
+            $(document).ready(function(){
+                $('#searchTable').hide();
+                $('#searchInput').on('keypress',function(){
+                    $('#searchTable').show();
+                });
+            });
         });
         </script>
         <!--Style Switcher -->
         <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
     <!-- End Footer Script -->  
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+#searchInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#searchTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#searchTable th, #searchTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#searchTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#searchTable tr.header, #searchTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+<script type="text/javascript">
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("searchTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 
 </html>

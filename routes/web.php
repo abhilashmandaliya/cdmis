@@ -35,6 +35,10 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('facility', 'FacilityController');
 	Route::resource('event', 'EventController');
 	Route::resource('institute', 'InstituteController');
+	Route::resource('consultant/dashboard', 'ConsultantController');
+	//Route::get('consultant/searchResult', 'InstituteController@searchResult');
+
+	Route::post('/institute/custom', 'InstituteController@search');
 });
 
 Route::get('/testmail', function() {
