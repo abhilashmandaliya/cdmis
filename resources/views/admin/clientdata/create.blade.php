@@ -4,6 +4,11 @@ Add Client
 @endsection
 
 @section('content')
+
+
+<link href="../plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
+<link href="../plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+
 <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
@@ -63,7 +68,31 @@ Add Client
                                                 </div>
                                                 <!--/span-->
                                             </div>
-                                            <!--/row-->										
+                                            <!--/row-->		
+
+                                            <div class="row">
+
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">Institutes</label>
+                                                        
+                                                        <div class="col-md-4">
+                                                        <select class="select2 m-b-10 select2-multiple" name="courses[]" multiple="multiple" data-placeholder="Choose">
+                                                        <optgroup label="Courses">
+                                                             @isset($institutes)
+                                                                @foreach($institutes as $institute)
+                                                            <option value={{  $institute->id }}>{{ $institute->instituteName }}</option>
+                                                            
+                                                            @endforeach                                        
+                                                            @endisset
+                                                        </optgroup>
+                                                    </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                    
+                                            </div>								
                                            
                                         </div>
                                         <div class="form-actions">
@@ -96,6 +125,11 @@ Add Client
                 for (var i = 0; i < 5; i++)
                     text += possible.charAt(Math.floor(Math.random() * possible.length));
                 $('[name=clientPassword').attr('value', text);
-            });            
+            });        
+
+             $('#pre-selected-options').multiSelect();
+            $('#optgroup').multiSelect({
+                selectableOptgroup: true
+            });    
         </script>
 @endsection

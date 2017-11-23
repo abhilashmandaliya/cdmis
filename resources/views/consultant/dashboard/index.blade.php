@@ -114,7 +114,7 @@
                         <li> <a href="ConsultancyIndex.html" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
                     <!-- End Client -->
                     <!-- Manage Client -->
-                        <li> <a href="viewClientConsultancy.html" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Client </span></a></li>
+                        <li> <a href="/clientdata/create" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Client </span></a></li>
                     <!-- End Client -->
                 </ul>
             </div>

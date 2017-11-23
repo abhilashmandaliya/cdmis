@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\ClientData;
+use App\Institute;
 use App\InstituteSuggestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ClientRegistered;
+
 
 class ClientDataController extends Controller
 {
@@ -29,7 +31,8 @@ class ClientDataController extends Controller
      */
     public function create()
     {
-        return view('admin.clientdata.create');
+        $institutes = Institute::all();
+        return view('admin.clientdata.create', ['institutes' => $institutes]);
     }
 
     /**
@@ -41,6 +44,8 @@ class ClientDataController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        //return json_encode($data);
+
         $client = new ClientRegistered();        
         $client->setUser($data['clientName']);
         $client->setPassword($data['clientPassword']);
@@ -49,6 +54,14 @@ class ClientDataController extends Controller
         $data['emailSentFlag'] = 1;
         $data['isVisible'] = 1;
         $id = ClientData::create($data)->id;
+
+        foreach ($data['courses'] as $course) {
+            
+             DB::table('institute_suggestions')->insert(
+                ['clientId' => $id, 'isSelectionDone' => 0, 'isVisible' => 1, 'instituteId' => $course]
+            );
+        }
+       
         return $this->create();
     }
 

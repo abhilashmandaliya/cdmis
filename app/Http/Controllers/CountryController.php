@@ -87,6 +87,6 @@ class CountryController extends Controller
     public function destroy(Country $country)
     {
         $country->delete();
-        return $this->index();
+        return response()->redirectTo('/country');
     }
 }

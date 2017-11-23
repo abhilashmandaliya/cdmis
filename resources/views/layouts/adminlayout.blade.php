@@ -31,6 +31,23 @@
 		<!-- Calendar CSS -->
 		<link href="/plugins/bower_components/calendar/dist/fullcalendar.css" rel="stylesheet" />
 		<!-- CSS For dropdown-->
+
+		<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Menu CSS -->
+    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+	
+    <!-- page CSS -->
+    <link href="../plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
+    <link href="../plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />  
+    <link href="../plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <!-- animation CSS -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- color CSS -->
+    <link href="css/colors/default.css" id="theme" rel="stylesheet">
 		<style>
 			.styled-select {
 			background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
