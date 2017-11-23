@@ -38,7 +38,7 @@ class BoardListController extends Controller
     {
         $board = $request->all();
         $id = BoardList::create($board)->id;
-        return $this->index();
+        return response()->redirectTo('/boardList');
     }
 
     /**
@@ -75,7 +75,7 @@ class BoardListController extends Controller
         $boardList['boardName'] = $request['boardName'];
         $boardList['isVisible'] = $request['isVisible'];
         $boardList->save();
-        return $this->index();
+        return response()->redirectTo('/boardList');
     }
 
     /**
@@ -87,6 +87,6 @@ class BoardListController extends Controller
     public function destroy(BoardList $boardList)
     {
         $boardList->delete();
-        return $this->index();
+        return response()->redirectTo('/boardList');
     }
 }

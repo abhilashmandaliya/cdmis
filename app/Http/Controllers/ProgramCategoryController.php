@@ -38,7 +38,7 @@ class ProgramCategoryController extends Controller
     {
         $programCategory = $request->all();
         $id = ProgramCategory::create($programCategory)->id;
-        return $this->index();
+        return response()->redirectTo('/programCategory');        
     }
 
     /**
@@ -75,7 +75,7 @@ class ProgramCategoryController extends Controller
         $programCategory['programCategoryName'] = $request['programCategoryName'];
         $programCategory['isVisible'] = $request['isVisible'];
         $programCategory->save();
-        return $this->index();
+        return response()->redirectTo('/programCategory');
     }
 
     /**
@@ -87,6 +87,6 @@ class ProgramCategoryController extends Controller
     public function destroy(ProgramCategory $programCategory)
     {
         $programCategory->delete();
-        return $this->index();
+        return response()->redirectTo('/programCategory');        
     }
 }

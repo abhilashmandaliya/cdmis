@@ -42,7 +42,7 @@ class ProgramListController extends Controller
     {
         $programList = $request->all();
         $id = ProgramList::create($programList)->id;
-        return $this->index();
+        return response()->redirectTo('/programList');
     }
 
     /**
@@ -81,7 +81,7 @@ class ProgramListController extends Controller
         $programList['streamId'] = $request['streamId'];
         $programList['isVisible'] = $request['isVisible'];
         $programList->save();
-        return $this->index();
+        return response()->redirectTo('/programList');
     }
 
     /**
@@ -93,6 +93,6 @@ class ProgramListController extends Controller
     public function destroy(ProgramList $programList)
     {
         $programList->delete();
-        return $this->index();
+        return response()->redirectTo('/programList');
     }
 }

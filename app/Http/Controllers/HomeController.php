@@ -50,8 +50,10 @@ class HomeController extends Controller
             }
             return view('admin.home', ['consultancyBranches' => $consultancyBranches, 'consultants' => $consultants, 'clients' => $clients, 'institutes' => $institutes, 'instituteCategoryLabels' => $_instituteCategoryLabels, 'instituteCategoryData' => $_instituteCategoryData, 'monthlyVisits' => $_monthlyVisits]);
         }
-        else if(strcasecmp($userType->typeName, "consultant") == 0)
-            return view('consultant.home');
+        else if(strcasecmp($userType->typeName, "consultant") == 0) {
+            $consultant = new ConsultantController();
+            return $consultant->index();
+        }
         return view('auth.login');
     }
 }

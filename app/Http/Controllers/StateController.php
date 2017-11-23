@@ -40,7 +40,7 @@ class StateController extends Controller
     {
         $data = $request->all();
         $id = State::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/state');        
     }
 
     /**
@@ -77,7 +77,7 @@ class StateController extends Controller
         $state->stateName = $request['stateName'];
         $state->isVisible = $request['isVisible'];
         $state->save();
-        return $this->index();
+        return response()->redirectTo('/state');                
     }
 
     /**
@@ -89,6 +89,6 @@ class StateController extends Controller
     public function destroy(State $state)
     {
         $state->delete();
-        return $this->index();
+        return response()->redirectTo('/state');
     }
 }

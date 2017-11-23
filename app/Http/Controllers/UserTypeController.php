@@ -40,7 +40,7 @@ class UserTypeController extends Controller
     {
         $userType = $request->all();
         $id = UserType::create($userType)->id;
-        return $this->index();
+        return response()->redirectTo('/userType');        
     }
 
     /**
@@ -79,7 +79,7 @@ class UserTypeController extends Controller
         $userType->typeName = $request['typeName'];
         $userType->isVisible = $request['isVisible'];
         $userType->save();
-        return $this->index();
+        return response()->redirectTo('/userType');                
     }
 
     /**
@@ -91,6 +91,6 @@ class UserTypeController extends Controller
     public function destroy(UserType $userType)
     {
         $userType->delete();
-        return $this->index();
+        return response()->redirectTo('/userType');        
     }
 }

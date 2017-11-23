@@ -38,7 +38,7 @@ class StreamCategoryController extends Controller
     {
         $streamCategory = $request->all();
         $id = StreamCategory::create($streamCategory)->id;
-        return $this->index();
+        return response()->redirectTo('/streamCategory');        
     }
 
     /**
@@ -75,7 +75,7 @@ class StreamCategoryController extends Controller
         $streamCategory['streamName'] = $request['streamName'];
         $streamCategory['isVisible'] = $request['isVisible'];
         $streamCategory->save();
-        return $this->index();
+        return response()->redirectTo('/streamCategory');                
     }
 
     /**
@@ -87,6 +87,6 @@ class StreamCategoryController extends Controller
     public function destroy(StreamCategory $streamCategory)
     {
         $streamCategory->delete();
-        return $this->index();
+        return response()->redirectTo('/streamCategory');                
     }
 }
