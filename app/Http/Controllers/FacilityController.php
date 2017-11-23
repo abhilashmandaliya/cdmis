@@ -38,7 +38,7 @@ class FacilityController extends Controller
     {
         $data = $request->all();
         $id = Facility::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/facility');        
     }
 
     /**
@@ -75,7 +75,7 @@ class FacilityController extends Controller
         $facility->facilityName = $request['facilityName'];
         $facility->isActive = $request['isActive'];
         $facility->save();
-        return $this->index();
+        return response()->redirectTo('/facility');
     }
 
     /**
@@ -87,6 +87,6 @@ class FacilityController extends Controller
     public function destroy(Facility $facility)
     {
          $facility->delete();
-        return $this->index();
+         return response()->redirectTo('/facility');
     }
 }

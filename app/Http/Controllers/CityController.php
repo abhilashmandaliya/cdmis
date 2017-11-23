@@ -40,7 +40,7 @@ class CityController extends Controller
     {
         $data = $request->all();
         $id = City::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/city');
     }
 
     /**
@@ -77,7 +77,7 @@ class CityController extends Controller
         $city->cityName = $request['cityName'];
         $city->isVisible = $request['isVisible'];
         $city->save();
-        return $this->index();
+        return response()->redirectTo('/city');
     }
 
     /**
@@ -89,6 +89,6 @@ class CityController extends Controller
     public function destroy(City $city)
     {
         $city->delete();
-        return $this->index();
+        return response()->redirectTo('/city');
     }
 }

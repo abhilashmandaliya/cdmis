@@ -1,128 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.adminlayout')
 
-<head>
-    <!-- Header Script Start -->
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
-    <title>CDMIS</title>        
-    <!-- Bootstrap Core CSS -->
-   <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- animation CSS -->
-    <link href="/css/animate.css" rel="stylesheet">
-    <!-- Menu CSS -->
-    <link href="../plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- page CSS -->
-    <link href="../plugins/bower_components/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="../plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
-    <link href="../plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
-    <link href="../plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="../plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
-    <link href="../plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
-    <link href="../plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
-    <!-- animation CSS --
-    <link href="css/animate.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/css/style.css" rel="stylesheet">
-    <!-- color CSS -->
-    <link href="/css/colors/default.css" id="theme" rel="stylesheet">
-    
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-    <!-- Header Script End -->
-</head>
+@section('title')
 
-<body class="fix-header">
-    <!-- ============================================================== -->
-    <!-- Preloader -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-        </svg>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Wrapper -->
-    <!-- ============================================================== -->
-    <div id="wrapper">
-        <!-- ============================================================== -->
-        <!-- Header Start Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <nav class="navbar navbar-default navbar-static-top m-b-0">            
-            <div class="navbar-header">
-                <div class="top-left-part" style="align:center;">
-                    <!-- Logo -->
-                    <a class="logo" href="index.html">
-                        <!-- Logo icon image, you can use font-icon also --><b>
-                        <img src="../plugins/images/admin-logo.png" alt="home" class="light-logo" />
-                     </b>
-                       <img src="../plugins/images/admin-text.png" alt="home" class="light-logo" />
-                     </span></a>
-                </div>
-                <!-- /Logo -->
-                <!-- Search input and Toggle icon -->
-                <ul class="nav navbar-top-links navbar-left">
-                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu"></i></a></li>
-                </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
-                     <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <b class="hidden-xs">Rashmi</b><span class="caret"></span> </a>
-                        <ul class="dropdown-menu dropdown-user animated flipInY">
-                            <li role="separator" class="divider"></li>
-                            <li><a href="consultantProfile.html"><i class="ti-user"></i> My Profile</a></li>
-                             <li role="separator" class="divider"></li>
-                            <li><a href="#" data-toggle="modal" data-target="#responsive-modal"><i class="ti-settings fa-fw"></i>Change Password</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="login2.html"><i class="fa fa-power-off"></i> Logout</a></li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
-                </ul>               
-            </div>          
-            <!-- /.navbar-header -->
-            <!-- /.navbar-top-links -->
-            <!-- /.navbar-static-side -->
-        </nav>      
-        <!-- Header End -->
-        <!-- End Top Navigation -->
-        
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav slimscrollsidebar">
-                <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
-                <div class="user-profile">
-                    
-                </div>
-                <ul class="nav" id="side-menu">
-                
-                
-                    <!-- Manage Client -->
-                        <li> <a href="ConsultancyIndex.html" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
-                    <!-- End Client -->
-                    <!-- Manage Client -->
-                        <li> <a href="viewClientConsultancy.html" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Client </span></a></li>
-                    <!-- End Client -->
-                </ul>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar -->
-        <!-- ============================================================== -->
-        
+Search Institute
+
+@endsection
+
+@section('content')
         <!-- ============================================================== -->
         <!-- Page Content -->
         <!-- ============================================================== -->
@@ -255,7 +139,6 @@
             <!-- /.container-fluid -->
             
             <!-- Footer Start -->
-            <footer class="footer text-center"> 2017 &copy; CDMIS </footer>
             <!-- Footer End -->
             
         </div>
@@ -423,6 +306,5 @@ function myFunction() {
   }
 }
 </script>
-</body>
 
-</html>
+@endsection

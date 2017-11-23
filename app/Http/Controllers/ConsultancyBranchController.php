@@ -40,7 +40,7 @@ class ConsultancyBranchController extends Controller
     {
         $consultancyBranch = $request->all();
         $id = ConsultancyBranch::create($consultancyBranch)->id;
-        return $this->index();
+        return response()->redirectTo('/consultancyBranch');
     }
 
     /**
@@ -80,7 +80,7 @@ class ConsultancyBranchController extends Controller
         $consultancyBranch['branchCity'] = $request['branchCity'];
         $consultancyBranch['isVisible'] = $request['isVisible'];
         $consultancyBranch->save();
-        return $this->index();
+        return response()->redirectTo('/consultancyBranch');
     }
 
     /**
@@ -92,6 +92,6 @@ class ConsultancyBranchController extends Controller
     public function destroy(ConsultancyBranch $consultancyBranch)
     {
         $consultancyBranch->delete();
-        return $this->index();
+        return response()->redirectTo('/consultancyBranch');        
     }
 }

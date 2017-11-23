@@ -38,7 +38,7 @@ class CourseListController extends Controller
     {
         $course = $request->all();
         $id = CourseList::create($course)->id;
-        return $this->index();
+        return response()->redirectTo('/courseList');
     }
 
     /**
@@ -75,7 +75,7 @@ class CourseListController extends Controller
         $courseList['isActive'] = $request['isActive'];
         $courseList['courseName'] = $request['courseName'];
         $courseList->save();
-        return $this->index();
+        return response()->redirectTo('/courseList');        
     }
 
     /**
@@ -87,6 +87,6 @@ class CourseListController extends Controller
     public function destroy(CourseList $courseList)
     {
         $courseList->delete();
-        return $this->index();
+        return response()->redirectTo('/courseList');        
     }
 }

@@ -38,7 +38,7 @@ class EventController extends Controller
     {
         $data = $request->all();
         $id = Event::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/event');
     }
 
     /**
@@ -75,7 +75,7 @@ class EventController extends Controller
         $event->eventName = $request['eventName'];
         $event->isActive = $request['isActive'];
         $event->save();
-        return $this->index();
+        return response()->redirectTo('/event');
     }
 
     /**
@@ -87,6 +87,6 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         $event->delete();
-        return $this->index();
+        return response()->redirectTo('/event');        
     }
 }
