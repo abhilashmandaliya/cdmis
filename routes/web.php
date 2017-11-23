@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/institute/custom', 'InstituteController@search');
 	Route::resource('institute', 'InstituteController');	
 	Route::get('/admin/dashboard', 'HomeController@index');
-	
+	Route::resource('clientdata', 'ClientDataController');
 });
 
 Route::group(['middleware' => 'guest'], function () {

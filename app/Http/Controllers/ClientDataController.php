@@ -7,6 +7,8 @@ use App\InstituteSuggestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ClientRegistered;
 
 class ClientDataController extends Controller
 {
@@ -27,7 +29,7 @@ class ClientDataController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.clientdata.create');
     }
 
     /**
@@ -38,7 +40,16 @@ class ClientDataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $client = new ClientRegistered();        
+        $client->setUser($data['clientName']);
+        $client->setPassword($data['clientPassword']);
+        Mail::to($data['clientEmail'])->send($client);
+        $data['clientPassword'] = bcrypt($data['clientPassword']);
+        $data['emailSentFlag'] = 1;
+        $data['isVisible'] = 1;
+        $id = ClientData::create($data)->id;
+        return $this->create();
     }
 
     /**
