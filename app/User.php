@@ -8,6 +8,8 @@
 namespace App;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
 /**
  * Class User
@@ -31,8 +33,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App
  */
-class User extends Eloquent
+class User extends Eloquent  implements Authenticatable
 {
+	use AuthenticableTrait;
+
 	protected $casts = [
 		'userTypeId' => 'int',
 		'branchId' => 'int',

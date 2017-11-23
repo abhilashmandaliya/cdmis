@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'guest'], function () {
+Route::group(['middleware' => 'auth'], function () {
 	Route::resource('country', 'CountryController');
 	Route::resource('state', 'StateController');
 	Route::resource('city', 'CityController');
@@ -34,7 +34,14 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::resource('courseList', 'CourseListController');
 	Route::resource('facility', 'FacilityController');
 	Route::resource('event', 'EventController');
-	Route::resource('institute', 'InstituteController');
+	Route::resource('institute', 'InstituteController');	
+	Route::get('/admin/dashboard', 'HomeController@index');
+	
+});
+
+Route::group(['middleware' => 'guest'], function () {
+	Route::post('/clientdata/search', 'ClientDataController@search');
+	Route::post('instituteSuggestion/upvote', 'InstituteSuggestionController@upvote');
 });
 
 Route::get('/testmail', function() {
