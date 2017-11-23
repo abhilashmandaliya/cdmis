@@ -1,10 +1,10 @@
 <pre>
-Hello, user.
+Hello, {{ $user }}.
 
-Thank you for visiting C.D.M.I.S. Your token for giving feedback is : abcfgsj45
+Thank you for visiting Arise Career Advisors. Your token for giving feedback is : {{ $password }}
 
 Use the <a src="http://127.0.0.1:8000">link</a> to provide your valueable feedback.
 
-Team,
-MIS Group 5
+Thanks and Regards,
+Team Arise Career Advisors
 </pre>

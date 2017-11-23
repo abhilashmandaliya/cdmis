@@ -82,6 +82,44 @@
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<script>
+			function deleteCheckFunction(id) {          
+			            if($("#deleteCheck:checked").length == 0) 
+			                {
+			                    deleteButton.disabled = true;                           
+			                }
+			                else
+			                {
+			                    deleteButton.disabled = false;
+			                }
+			}
+			
+			function deleteConfirmation(){
+			
+			    
+			
+			}
+			
+		</script>
+		<!-- jQuery -->
+		<script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+		<!-- Menu Plugin JavaScript -->
+		<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+		<!--slimscroll JavaScript -->
+		<script src="/js/jquery.slimscroll.js"></script>
+		<!--Wave Effects -->
+		<script src="/js/waves.js"></script>
+		<!-- Custom Theme JavaScript -->
+		<script src="/js/custom.min.js"></script>
+		<!-- Footable -->
+		<!--<script src="/plugins/bower_components/footable/js/footable.all.min.js"></script>-->
+		<script src="/plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+		<!--FooTable init-->
+		<!--<script src="/js/footable-init.js"></script>-->
+		<!--Style Switcher -->
+		<script src="/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
 	</head>
 	<body class="fix-header">
 		<!-- ============================================================== -->
@@ -243,7 +281,7 @@
 								<li>
 									<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Insert User</span><span class="fa arrow"></span></a>
 									<ul class="nav nav-third-level">
-										<li> <a href="addUser.html"><i class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Admin/Consultant</span></a> </li>
+										<li> <a href="/user/create"><i class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Admin/Consultant</span></a> </li>
 									</ul>
 								</li>
 							</ul>
@@ -291,45 +329,7 @@
 			<!-- Page Content -->
 			<!-- ============================================================== -->
 			@yield('content')
-		</div>
-		<script>
-			function deleteCheckFunction(id) {          
-			            if($("#deleteCheck:checked").length == 0) 
-			                {
-			                    deleteButton.disabled = true;                           
-			                }
-			                else
-			                {
-			                    deleteButton.disabled = false;
-			                }
-			}
-			
-			function deleteConfirmation(){
-			
-			    
-			
-			}
-			
-		</script>
-		<!-- jQuery -->
-		<script src="/plugins/bower_components/jquery/dist/jquery.min.js"></script>
-		<!-- Bootstrap Core JavaScript -->
-		<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-		<!-- Menu Plugin JavaScript -->
-		<script src="/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
-		<!--slimscroll JavaScript -->
-		<script src="/js/jquery.slimscroll.js"></script>
-		<!--Wave Effects -->
-		<script src="/js/waves.js"></script>
-		<!-- Custom Theme JavaScript -->
-		<script src="/js/custom.min.js"></script>
-		<!-- Footable -->
-		<!--<script src="/plugins/bower_components/footable/js/footable.all.min.js"></script>-->
-		<script src="/plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
-		<!--FooTable init-->
-		<!--<script src="/js/footable-init.js"></script>-->
-		<!--Style Switcher -->
-		<script src="/plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>  
+		</div>		
 		<!-- Change Password Modal -->
 		<div id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			<div class="modal-dialog">

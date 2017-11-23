@@ -11,6 +11,9 @@ class ClientRegistered extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $password;
+
+    private $user;
     /**
      * Create a new message instance.
      *
@@ -21,6 +24,15 @@ class ClientRegistered extends Mailable
         //
     }
 
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
     /**
      * Build the message.
      *
@@ -28,8 +40,8 @@ class ClientRegistered extends Mailable
      */
     public function build()
     {
-        return $this->from('postmaster@sandbox6ae8989757d24264af8b408863e86f8f.mailgun.org')
+        return $this->from('abhilashmandaliya@gmail.com')
                     ->subject('C.D.M.I.S Feedback Token')
-                    ->view('emails.user.registered');
+                    ->view('emails.user.registered', ['password' => $this->password, 'user' => $this->user]);
     }
 }
