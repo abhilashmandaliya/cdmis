@@ -220,122 +220,140 @@
 						<h3><span class="fa-fw open-close"><i class="ti-close ti-menu"></i></span> <span class="hide-menu">Navigation</span></h3>
 					</div>
 					<ul class="nav" id="side-menu">
-						<!-- Dashboard -->
-						<li> <a href="/admin/dashboard" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
-						<!-- End Dashboard -->
-						<!-- Manage Location -->					
-						<li> 
-                            <a href="/admin/dashboard" class="waves-effect">
-                                <i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> 
-                                <span class="hide-menu">Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-							<a href="javascript:void(0)" class="waves-effect">
-							<i class="mdi mdi-map-marker-multiple fa-fw"></i>
-							<span class="hide-menu">Manage Location
-							<span class="fa arrow"></span>
-							</span>
-							</a>
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="/country" class="waves-effect">
-									<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
-									<span class="hide-menu">Country</span>
-									</a>
-								</li>
-								<li>
-									<a href="state" class="waves-effect">
-									<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
-									<span class="hide-menu">State</span>
-									</a>
-								</li>
-								<li>
-									<a href="city" class="waves-effect">
-									<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
-									<span class="hide-menu">City</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-						<!-- End Manage Location -->
-						<!-- Manage User Type -->
-						<li> <a href="/userType" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw" data-icon="v"></i> <span class="hide-menu">Manage UserType</span></a></li>
-						<!-- End Manage User Type -->
-						<!-- Manage Branch -->
-						<li> <a href="/consultancyBranch" class="waves-effect"><i class="mdi mdi-source-branch fa-fw" data-icon="v"></i> <span class="hide-menu">Manage Branches</span></a></li>
-						<!-- End Manage Branch -->					
-						<!-- Manage Education Basics -->
-						<li>
-							<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-school fa-fw"></i> <span class="hide-menu">Manage Basics<span class="fa arrow"></span></span></a>
-							<ul class="nav nav-second-level">
-								<li> <a href="/instituteCategory" class="waves-effect">
-									<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
-									<span class="hide-menu">Institute Category</span>
-									</a>
-								</li>
-								<li> <a href="/boardList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
-								<li> <a href="/streamCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Stream category</span></a></li>
-								<li> <a href="/programCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
-								<li> <a href="/programList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
-								<li> <a href="/courseList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
-							</ul>
-						</li>
-						<!-- End Manage Education Basics -->
-						<!-- Manage Extra Activities -->
-						<li>
-							<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-plus-box fa-fw"></i> <span class="hide-menu">Manage Extra<span class="fa arrow"></span></span></a>
-							<ul class="nav nav-second-level">
-								<li> <a href="/facility"><i data-icon="/" class="mdi mdi-seat-recline-extra fa-fw"></i><span class="hide-menu">Facilities</span></a> </li>
-								<li> <a href="/event"><i data-icon="/" class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">Events</span></a> </li>
-							</ul>
-						</li>
-						<!-- End Manage Activities -->
-						<!-- Manage User -->				
-						<li>
-							<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Manage Users<span class="fa arrow"></span></span></a>
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Insert User</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="/user/create"><i class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Admin/Consultant</span></a> </li>
-									</ul>
-								</li>
-							</ul>
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account fa-fw"></i><span class="hide-menu">View User</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										@isset($_userTypes)
-										@foreach($_userTypes as $_userType)
-										<li> <a href="/userType/{{ $_userType->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">{{ $_userType->typeName }}</span></a> </li>
-										@endforeach
-										@endisset
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<!-- End Manage User -->
-						<!-- Manage Institute -->
-						<li>
-							<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
-							@isset($_instituteCategories)
-							@foreach($_instituteCategories as $_instituteCategory)
-							<ul class="nav nav-second-level">
-								<li>
-									<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">{{ $_instituteCategory->categoryName }}</span><span class="fa arrow"></span></a>
-									<ul class="nav nav-third-level">
-										<li> <a href="/instituteCategory/{{ $_instituteCategory->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
-										<li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
-										<li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
-										<li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>
-									</ul>
-								</li>
-							</ul>
-							@endforeach
-							@endisset
-						</li>
-						<!-- End Manage Institute -->					
+						@if($isAdmin == 1)
+							<!-- Dashboard -->
+							<li> <a href="/admin/dashboard" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
+							<!-- End Dashboard -->
+							<!-- Manage Location -->					
+							<li> 
+								<a href="/admin/dashboard" class="waves-effect">
+									<i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> 
+									<span class="hide-menu">Dashboard</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" class="waves-effect">
+								<i class="mdi mdi-map-marker-multiple fa-fw"></i>
+								<span class="hide-menu">Manage Location
+								<span class="fa arrow"></span>
+								</span>
+								</a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="/country" class="waves-effect">
+										<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+										<span class="hide-menu">Country</span>
+										</a>
+									</li>
+									<li>
+										<a href="state" class="waves-effect">
+										<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+										<span class="hide-menu">State</span>
+										</a>
+									</li>
+									<li>
+										<a href="city" class="waves-effect">
+										<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+										<span class="hide-menu">City</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+							<!-- End Manage Location -->
+							<!-- Manage User Type -->
+							<li> <a href="/userType" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw" data-icon="v"></i> <span class="hide-menu">Manage UserType</span></a></li>
+							<!-- End Manage User Type -->
+							<!-- Manage Branch -->
+							<li> <a href="/consultancyBranch" class="waves-effect"><i class="mdi mdi-source-branch fa-fw" data-icon="v"></i> <span class="hide-menu">Manage Branches</span></a></li>
+							<!-- End Manage Branch -->					
+							<!-- Manage Education Basics -->
+							<li>
+								<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-school fa-fw"></i> <span class="hide-menu">Manage Basics<span class="fa arrow"></span></span></a>
+								<ul class="nav nav-second-level">
+									<li> <a href="/instituteCategory" class="waves-effect">
+										<i class="mdi mdi mdi-eye fa-fw fa-fw"></i>
+										<span class="hide-menu">Institute Category</span>
+										</a>
+									</li>
+									<li> <a href="/boardList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Boardlist</span></a></li>
+									<li> <a href="/streamCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Stream category</span></a></li>
+									<li> <a href="/programCategory" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program category</span></a></li>
+									<li> <a href="/programList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Program List</span></a></li>
+									<li> <a href="/courseList" class="waves-effect"><i class="mdi mdi mdi-eye fa-fw fa-fw"></i><span class="hide-menu">Course List</span></a></li>
+								</ul>
+							</li>
+							<!-- End Manage Education Basics -->
+							<!-- Manage Extra Activities -->
+							<li>
+								<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-plus-box fa-fw"></i> <span class="hide-menu">Manage Extra<span class="fa arrow"></span></span></a>
+								<ul class="nav nav-second-level">
+									<li> <a href="/facility"><i data-icon="/" class="mdi mdi-seat-recline-extra fa-fw"></i><span class="hide-menu">Facilities</span></a> </li>
+									<li> <a href="/event"><i data-icon="/" class="mdi mdi-calendar-multiple-check fa-fw"></i><span class="hide-menu">Events</span></a> </li>
+								</ul>
+							</li>
+							<!-- End Manage Activities -->
+							<!-- Manage User -->				
+							<li>
+								<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-account-multiple fa-fw"></i> <span class="hide-menu">Manage Users<span class="fa arrow"></span></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Insert User</span><span class="fa arrow"></span></a>
+										<ul class="nav nav-third-level">
+											<li> <a href="/user/create"><i class="mdi mdi-account-multiple-plus fa-fw"></i><span class="hide-menu">Admin/Consultant</span></a> </li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-account fa-fw"></i><span class="hide-menu">View User</span><span class="fa arrow"></span></a>
+										<ul class="nav nav-third-level">
+											@isset($_userTypes)
+											@foreach($_userTypes as $_userType)
+											<li> <a href="/userType/{{ $_userType->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">{{ $_userType->typeName }}</span></a> </li>
+											@endforeach
+											@endisset
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<!-- End Manage User -->
+							<!-- Manage Institute -->
+							<li>
+								<a href="javascript:void(0)" class="waves-effect"><i class="mdi mdi-book-open-variant fa-fw"></i> <span class="hide-menu">Manage Institute<span class="fa arrow"></span></span></a>
+								@isset($_instituteCategories)
+								@foreach($_instituteCategories as $_instituteCategory)
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="javascript:void(0)" class="waves-effect"><i data-icon="&#xe008;" class="mdi mdi-lead-pencil fa-fw"></i><span class="hide-menu">{{ $_instituteCategory->categoryName }}</span><span class="fa arrow"></span></a>
+										<ul class="nav nav-third-level">
+											<li> <a href="/instituteCategory/{{ $_instituteCategory->id }}"><i class="mdi mdi-eye fa-fw"></i><span class="hide-menu">View</span></a> </li>
+											<!--
+												<li> <a href="addSchoolBasicsExtra.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Basics & Extra</span></a></li>
+												<li> <a href="addSchoolAddress.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Address</span></a></li>
+												<li> <a href="addSchoolProgram.html"><i class="mdi mdi-database-plus fa-fw"></i><span class="hide-menu">Program & Course</span></a></li>
+											-->
+										</ul>
+									</li>
+								</ul>
+								@endforeach
+								@endisset
+							</li>						
+							<!-- End Manage Institute -->
+						@else
+							<!-- Manage Client -->
+							<li> <a href="/consultant/dashboard" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span></a></li>
+							<!-- End Client -->
+							<li> 
+								<a href="/consultant/dashboard" class="waves-effect">
+									<i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> 
+									<span class="hide-menu">Dashboard</span>
+								</a>
+							</li>
+							<!-- Manage Client -->
+							<li> <a href="/clientdata/create" class="waves-effect"><i class="mdi mdi-account-circle fa-fw" data-icon="v"></i> <span class="hide-menu"> Client </span></a></li>
+							<!-- End Client -->
+						@endif
+
 					</ul>
 				</div>
 			</div>

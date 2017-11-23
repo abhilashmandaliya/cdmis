@@ -38,7 +38,7 @@ class InstituteCategoryController extends Controller
     {
         $data = $request->all();
         $id = InstituteCategory::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/instituteCategory');        
     }
 
     /**
@@ -76,7 +76,7 @@ class InstituteCategoryController extends Controller
         $instituteCategory->categoryName = $request['categoryName'];
         $instituteCategory->isVisible = $request['isVisible'];
         $instituteCategory->save();
-        return $this->index();
+        return response()->redirectTo('/instituteCategory');        
     }
 
     /**
@@ -88,6 +88,6 @@ class InstituteCategoryController extends Controller
     public function destroy(InstituteCategory $instituteCategory)
     {
         $instituteCategory->delete();
-        return $this->index();
+        return response()->redirectTo('/instituteCategory');
     }
 }

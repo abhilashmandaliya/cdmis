@@ -38,7 +38,7 @@ class CountryController extends Controller
     {
         $data = $request->all();
         $id = Country::create($data)->id;
-        return $this->index();
+        return response()->redirectTo('/country');
     }
 
     /**
@@ -75,7 +75,7 @@ class CountryController extends Controller
         $country->countryName = $request['countryName'];
         $country->isVisible = $request['isVisible'];
         $country->save();
-        return $this->index();
+        return response()->redirectTo('/country');        
     }
 
     /**
