@@ -12,6 +12,7 @@ use App\ProgramList;
 use App\BoardList;
 use App\CourseList;
 use App\InstituteCourse;
+use App\InstituteProgram;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -204,5 +205,63 @@ class InstituteController extends Controller
     {
         //
     }
+
+    public function search(Request $request) {
+        $search = $request->search;
+        $data = $request->data;
+            
+        $result="";
+        if($search == "school" || $search == "college" || $search == "private_institute")
+        {
+           $result = DB::table('institutes')
+            ->join('institute_cities', 'institutes.id', '=', 'institute_cities.instituteId')
+            ->join('cities', 'cities.id', '=', 'institute_cities.cityId')
+            ->select('institutes.id AS iid', 'institutes.instituteName AS iname', 'institutes.logo_path AS ilogo','institute_cities.address AS iaddress','institute_cities.contactNumber AS inum','institute_cities.websiteLink AS isite', 'cities.cityName AS icity' )
+            ->where('institutes.id', $data)
+            ->get();
+        }
+
+        else if($search == "program")
+        {
+            $iids = InstituteProgram::where('programId', $data)->pluck('instituteId')->toArray();
+
+             $result = DB::table('institutes')
+            ->join('institute_cities', 'institutes.id', '=', 'institute_cities.instituteId')
+            ->join('cities', 'cities.id', '=', 'institute_cities.cityId')
+            ->select('institutes.id AS iid', 'institutes.instituteName AS iname', 'institutes.logo_path AS ilogo','institute_cities.address AS iaddress','institute_cities.contactNumber AS inum','institute_cities.websiteLink AS isite', 'cities.cityName AS icity' )
+            ->whereIn('institutes.id', $iids)
+            ->get();
+        }
+
+        else if($search == "course")
+        {
+            $iids = InstituteCourse::where('courseId', $data)->pluck('instituteProgramId')->toArray();
+            $ids = InstituteProgram::whereIn('id', $iids)->pluck('instituteId')->toArray();
+
+             $result = DB::table('institutes')
+            ->join('institute_cities', 'institutes.id', '=', 'institute_cities.instituteId')
+            ->join('cities', 'cities.id', '=', 'institute_cities.cityId')
+            ->select('institutes.id AS iid', 'institutes.instituteName AS iname', 'institutes.logo_path AS ilogo','institute_cities.address AS iaddress','institute_cities.contactNumber AS inum','institute_cities.websiteLink AS isite', 'cities.cityName AS icity' )
+            ->whereIn('institutes.id', $ids)
+            ->get();
+        }
+
+        else if($search == "city")
+        {
+            $ids = InstituteCity::where('cityId', $data)->pluck('instituteId')->toArray();
+
+             $result = DB::table('institutes')
+            ->join('institute_cities', 'institutes.id', '=', 'institute_cities.instituteId')
+            ->join('cities', 'cities.id', '=', 'institute_cities.cityId')
+            ->select('institutes.id AS iid', 'institutes.instituteName AS iname', 'institutes.logo_path AS ilogo','institute_cities.address AS iaddress','institute_cities.contactNumber AS inum','institute_cities.websiteLink AS isite', 'cities.cityName AS icity' )
+            ->whereIn('institutes.id', $ids)
+            ->where('cities.id', $data)
+            ->get();
+        }
+
+        return view('consultant.searchResult.index', ['result' => $result]);
+            
+    }
+
 
 }
