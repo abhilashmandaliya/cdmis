@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Client;
+use App\ClientData;
+use App\InstituteSuggestion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Hash;
 
-class ClientController extends Controller
+class ClientDataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -81,5 +84,21 @@ class ClientController extends Controller
     public function destroy(Client $client)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $client = ClientData::where('clientEmail', $request['clientEmail'])->where('isVisible', 1)->get();
+        if (!is_null($client) && sizeof($client) > 0 && Hash::check($request['clientPassword'], $client[0]->clientPassword)) {
+            $institutes = DB::table('institute_suggestions')
+                            ->join('institutes', 'institute_suggestions.instituteId', 'institutes.id')
+                            ->select('institute_suggestions.*', 'institutes.*')
+                            ->where('institute_suggestions.isVisible', 1)
+                            ->where('institutes.isVisible', 1)
+                            ->where('institute_suggestions.clientId', $client[0]->id)
+                            ->get();
+            return json_encode($institutes);
+        }
+        return null;
     }
 }

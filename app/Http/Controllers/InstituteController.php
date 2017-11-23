@@ -263,9 +263,5 @@ class InstituteController extends Controller
             
     }
 
-    public function searchResult() {
-         
-    }
-
 
 }
